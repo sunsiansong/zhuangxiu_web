@@ -1,0 +1,26 @@
+.topnav {
+    background-color: white;
+    height: 20px;
+}
+
+.topnav a {
+    float: left;
+    color: lightpink;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.topnav a:hover {
+    color: orangered;
+}
+
+.topnav a.active {
+    color: orangered;
+}
+
+/* like btn */
+.topnav a.like {
+    float: right!important;
+}
