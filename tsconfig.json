@@ -14,6 +14,10 @@
     "lib": [
       "es2017",
       "dom"
+    ],
+    //added from https://codeburst.io/angular-6-ng-test-with-jest-in-3-minutes-b1fe5ed3417c
+    "types": [
+      "jest"
     ]
   }
 }

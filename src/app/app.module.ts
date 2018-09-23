@@ -12,6 +12,7 @@ import { FooterComponent } from './footer/footer.component';
 import { HomeCasesComponent } from './home/home-cases/home-cases.component';
 import { CaseCardComponent } from './common/components/case-card/case-card.component';
 import { HomeBannerComponent } from './home/home-banner/home-banner.component';
+import { HomeNewsComponent } from './home/home-news/home-news.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { HomeBannerComponent } from './home/home-banner/home-banner.component';
     HomeCasesComponent,
     CaseCardComponent,
     HomeBannerComponent,
+    HomeNewsComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({appId: 'my-app'}),

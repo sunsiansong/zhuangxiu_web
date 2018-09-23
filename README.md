@@ -6,10 +6,21 @@ started from [angular universal](https://github.com/angular/universal-starter)
 待投稿至bilibili
 
 ## 使用技术
+
+
 - angular
 - ng-universal
 - material
 - ng-flex-layout
+
+测试
+- 单元测试：jest,ref:
+    - [jest official doc](https://jestjs.io/)
+    - [TESTING ANGULAR FASTER WITH JEST](https://www.xfive.co/blog/testing-angular-faster-jest/)
+
+- e2e: ,ref:
+    - youtube
+    - official doc
 
 ## 进度
 - [GOING]PC页面
