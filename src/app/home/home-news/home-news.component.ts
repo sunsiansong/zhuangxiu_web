@@ -1,25 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-home-news',
-  template: `
-    <p>
-      home-news works!
-    </p>
-    <ul>
-      <li *ngFor="let i of news">{{i}}</li>
-    </ul>
-  `,
+  templateUrl: './home-news.component.html',
   styles: []
 })
 export class HomeNewsComponent implements OnInit {
 
+  @Input()
   news: any[];
 
   constructor() { }
 
   ngOnInit() {
-    this.news = [1, 2];
   }
 
 }

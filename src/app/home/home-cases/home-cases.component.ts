@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Case } from '../../common/model/case';
+import { Case } from '../../common/model/case.model';
 
 @Component({
   selector: 'app-home-cases',

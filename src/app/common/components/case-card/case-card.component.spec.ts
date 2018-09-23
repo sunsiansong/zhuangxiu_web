@@ -1,0 +1,36 @@
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+
+import { CaseCardComponent } from './case-card.component';
+
+describe('CaseCardComponent', () => {
+  let component: CaseCardComponent;
+  let fixture: ComponentFixture<CaseCardComponent>;
+
+  beforeEach(async(() => {
+    TestBed.configureTestingModule({
+      declarations: [ CaseCardComponent ]
+    })
+    .compileComponents();
+  }));
+
+  beforeEach(() => {
+    fixture = TestBed.createComponent(CaseCardComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+
+  it('需要显示出title', () => {
+    const title = '233';
+    component.case = <any> {
+      title
+    };
+    fixture.detectChanges();
+    const ele: HTMLElement = fixture.nativeElement;
+    console.log('CaseCard text:', ele.textContent);
+    expect(ele.textContent).toContain(title);
+  });
+});

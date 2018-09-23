@@ -13,6 +13,10 @@ import { HomeCasesComponent } from './home/home-cases/home-cases.component';
 import { CaseCardComponent } from './common/components/case-card/case-card.component';
 import { HomeBannerComponent } from './home/home-banner/home-banner.component';
 import { HomeNewsComponent } from './home/home-news/home-news.component';
+import { MockPageDataService } from './service/__mock__/page-data.service.mock';
+import { PageDataImplServie } from './service/impl/page-data.impl.service';
+import { PageDataService } from './service/page-data.service';
+import { HomeArtilesComponent } from './home/home-artiles/home-artiles.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +28,7 @@ import { HomeNewsComponent } from './home/home-news/home-news.component';
     CaseCardComponent,
     HomeBannerComponent,
     HomeNewsComponent,
+    HomeArtilesComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({appId: 'my-app'}),
@@ -36,7 +41,10 @@ import { HomeNewsComponent } from './home/home-news/home-news.component';
     ]),
     TransferHttpCacheModule,
   ],
-  providers: [],
+  providers: [
+    {provide: PageDataService, useClass: MockPageDataService},
+    // {provide: PageDataService, useClass: PageDataImplServie}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

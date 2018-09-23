@@ -1,0 +1,12 @@
+<mat-card>
+    <img mat-card-image [src]="case.coverImageUrl" />
+    <mat-card-title>{{case.title}}</mat-card-title>
+    <mat-card-content>{{case.summary}}</mat-card-content>
+    <mat-card-footer>
+        <mat-chip-list class="">
+            <mat-chip *ngFor="let tag of case.tags" [color]="'primary'">
+                {{tag}}
+            </mat-chip>
+        </mat-chip-list>
+    </mat-card-footer>
+</mat-card>

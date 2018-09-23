@@ -1,5 +1,14 @@
 <h3>{{ message }}</h3>
-<button mat-button (click)="onBtnClick()">Click me!</button>
-<app-home-banner></app-home-banner>
-<app-home-cases></app-home-cases>
-<app-home-news></app-home-news>
+<app-home-banner [slogan]="state.configs.slogan"></app-home-banner>
+<app-home-cases [cases]="state.cases"></app-home-cases>
+<mat-grid-list [cols]="2">
+    <mat-grid-tile>
+        <app-home-news [news]="state.newsPosts"></app-home-news>
+    </mat-grid-tile>
+    
+    <mat-grid-tile>
+        <app-home-artiles [articles]="state.articlePosts"></app-home-artiles>
+    </mat-grid-tile>
+
+</mat-grid-list>
+

@@ -47,7 +47,7 @@
     "no-arg": true,
     "no-bitwise": true,
     "no-console": [
-      true,
+      false,//FIXME 开发期间先这么搞，后面再配置下autofix
       "debug",
       "info",
       "time",
@@ -85,7 +85,7 @@
     ],
     "prefer-const": true,
     "quotemark": [
-      true,
+      false,//FIXME 开发期间先这么搞，后面再配置下autofix
       "single"
     ],
     "radix": true,

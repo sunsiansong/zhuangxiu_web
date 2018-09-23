@@ -1,13 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Case } from '../../model/case';
+import { Case } from '../../model/case.model';
 
 @Component({
   selector: 'app-case-card',
-  template: `
-    <p>
-      case-card works!
-    </p>
-  `,
+  templateUrl: './case-card.component.html',
   styles: []
 })
 export class CaseCardComponent implements OnInit {

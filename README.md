@@ -27,6 +27,8 @@ started from [angular universal](https://github.com/angular/universal-starter)
 - [TODO]移动端适配
 - [TODO]接口整合
 - [TODO]测试支持
+    - [done] jest unit test
+    - [TODO] cypress e2e test
 
 ## 取得联系
 mailto: sunsiansong#163.com
