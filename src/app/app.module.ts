@@ -1,6 +1,6 @@
 import {BrowserModule} from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {NgModule} from '@angular/core';
+import {NgModule, Provider} from '@angular/core';
 import {RouterModule} from '@angular/router';
 
 import { AppComponent } from './app.component';
@@ -17,6 +17,12 @@ import { MockPageDataService } from './service/__mock__/page-data.service.mock';
 import { PageDataImplServie } from './service/impl/page-data.impl.service';
 import { PageDataService } from './service/page-data.service';
 import { HomeArtilesComponent } from './home/home-artiles/home-artiles.component';
+import { environment } from '../environments/environment';
+
+
+const serviceProviders: Provider[] = environment.mockService
+  ? [{provide: PageDataService, useClass: MockPageDataService}]
+  : [{provide: PageDataService, useClass: PageDataImplServie}];
 
 @NgModule({
   declarations: [
@@ -41,10 +47,7 @@ import { HomeArtilesComponent } from './home/home-artiles/home-artiles.component
     ]),
     TransferHttpCacheModule,
   ],
-  providers: [
-    {provide: PageDataService, useClass: MockPageDataService},
-    // {provide: PageDataService, useClass: PageDataImplServie}
-  ],
+  providers: serviceProviders,
   bootstrap: [AppComponent]
 })
 export class AppModule { }

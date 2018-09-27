@@ -70,7 +70,7 @@ export const MOCK_POSTS_NEWS: Post[] = [
         createDate: new Date
     },
     {
-        title: '打折打折，前场打断为止',
+        title: '打折打折，全场打断为止',
         viewCount: 999,
         tags: [],
         topped: false,
@@ -123,3 +123,12 @@ export const MOCK_POSTS_ARTICLES: Post[] = [
         createDate: new Date
     }
 ];
+
+
+export const MOCK_CONFIG_MAP = {
+    slogan: `“装饰的灵魂是设计，
+    设计的灵魂是文化,设计就是以人为本。
+    遵守自然法则，缔造经典家装。”
+            -- 哥白尼2
+    `
+};

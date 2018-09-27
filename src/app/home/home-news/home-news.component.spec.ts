@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { HomeNewsComponent } from './home-news.component';
+import { MaterialModule } from '../../material.module';
+import { MOCK_POSTS_NEWS } from '../../../test/example.data';
 
 describe('HomeNewsComponent', () => {
   let component: HomeNewsComponent;
@@ -8,7 +10,8 @@ describe('HomeNewsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ HomeNewsComponent ]
+      declarations: [ HomeNewsComponent ],
+      imports: [MaterialModule]
     })
     .compileComponents();
   }));
@@ -23,14 +26,13 @@ describe('HomeNewsComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('测试jest与angular的整合：组件测试', () => {
-    expect(component.news.length).toBe(2);
-  });
-
   it('测试ui', () => {
+    component.news = MOCK_POSTS_NEWS.slice(3);
+
+    fixture.detectChanges();
     const ul: HTMLElement = fixture.nativeElement;
-    const uiEle = ul.querySelector('ul');
-    console.log('TEXT::' + uiEle.textContent);
+    const uiEle = ul.querySelector('mat-list');
+    // console.log('TEXT::' + uiEle.textContent);
     expect(uiEle.childElementCount).toBe(2);
   });
 });
