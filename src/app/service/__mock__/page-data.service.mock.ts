@@ -12,6 +12,7 @@ export class MockPageDataService extends PageDataService {
 
     homeData(): Observable<HomeState> {
         const state: HomeState = {
+            now: new Date,
             cases: MOCK_CASES,
             newsPosts: MOCK_POSTS_NEWS,
             articlePosts: MOCK_POSTS_ARTICLES,

@@ -150,15 +150,16 @@
       }
     }
   },
-  "cli": {},
+  "cli": {
+  },
   "schematics": {
     "@schematics/angular:class": {
       "spec": false
     },
     "@schematics/angular:component": {
-      "spec": false,
-      "inlineStyle": true,
-      "inlineTemplate": true,
+      "spec": true,
+      "inlineStyle": false,
+      "inlineTemplate": false,
       "prefix": "app",
       "styleext": "css"
     },

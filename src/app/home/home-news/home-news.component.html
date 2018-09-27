@@ -1,8 +1,12 @@
 <h4>动态/公告</h4>
 <mat-list>
     <mat-list-item *ngFor="let n of news">
+        <span class="timeline-news-date">
+            {{n.createDate | readableDate:now}}
+            <span class="time-divider"></span>
+        </span>
         <span *ngIf="n.topped">【置顶】</span>
-        {{n.title}}
+        <span class="news-title">{{n.title}}</span>
     </mat-list-item>
 </mat-list>
 <div style="text-align: right;">

@@ -26,15 +26,22 @@ describe('CaseCardComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('需要显示出title', () => {
-    const title = '233';
-    component.case = {
-      ...MOCK_CASES[0],
-      ...{title}
-    };
+  it('内容显示需要完整', () => {
+    const c = MOCK_CASES[0];
+    component.case = c;
     fixture.detectChanges();
     const ele: HTMLElement = fixture.nativeElement;
-    // console.log('CaseCard text:', ele.textContent);
-    expect(ele.textContent).toContain(title);
+
+    const textContent = ele.textContent;
+    expect(textContent)
+      .toContain(c.title);
+    expect(textContent).toContain(c.summary);
+    c.tags.forEach((t, i) => {
+      expect(textContent).toContain(t);
+    });
+    // expect(textContent).toContain('不存在的文本');
+
+    const img: HTMLElement = ele.querySelector('img');
+    expect(img.getAttribute('src')).toEqual(c.coverImageUrl);
   });
 });

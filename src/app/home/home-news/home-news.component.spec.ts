@@ -27,12 +27,23 @@ describe('HomeNewsComponent', () => {
   });
 
   it('测试ui', () => {
-    component.news = MOCK_POSTS_NEWS.slice(3);
+    const news = MOCK_POSTS_NEWS.slice(3);
+    news[0].topped = true;
+    component.news = news;
+
 
     fixture.detectChanges();
-    const ul: HTMLElement = fixture.nativeElement;
-    const uiEle = ul.querySelector('mat-list');
+    const ele: HTMLElement = fixture.nativeElement;
+    const textContent = ele.textContent;
+
+    const uiEle = ele.querySelector('mat-list');
     // console.log('TEXT::' + uiEle.textContent);
-    expect(uiEle.childElementCount).toBe(2);
+    expect(uiEle.childElementCount).toBe(news.length);
+
+
+    news.forEach((n) => {
+      expect(textContent).toContain(n.title);
+    });
+    expect(textContent).toContain('【置顶】');
   });
 });

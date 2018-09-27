@@ -5,6 +5,7 @@ import { Config } from '../common/model/config.model';
 import { PageDataService } from '../service/page-data.service';
 
 export interface HomeState {
+  now: Date;
   cases: Case[];
   newsPosts: Post[];
   articlePosts: Post[];
