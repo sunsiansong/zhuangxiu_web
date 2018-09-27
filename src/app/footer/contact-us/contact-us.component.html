@@ -1,0 +1,40 @@
+<div>
+  <h4>取得联系</h4>
+
+  <form class="contact-form">
+    <label>意图：</label>
+    <mat-radio-group [(ngModel)]="info.intentionType" name="intentionType" >
+      <mat-radio-button [value]="'商务合作'">商务合作</mat-radio-button>
+      <mat-radio-button [value]="'业务咨询'">业务咨询</mat-radio-button>
+      <mat-radio-button [value]="'招聘求职'">招聘求职</mat-radio-button>
+      <mat-radio-button [value]="'售后服务'">售后服务</mat-radio-button>
+      <mat-radio-button [value]="'其他'">其他</mat-radio-button>
+    </mat-radio-group>
+
+    <label>联系方式</label>
+    <mat-radio-group [(ngModel)]="info.channelType" name="channelType" >
+      <mat-radio-button [value]="'QQ'">QQ </mat-radio-button>
+        <mat-radio-button [value]="'微信'">微信 </mat-radio-button>
+        <mat-radio-button [value]="'电话'">电话 </mat-radio-button>
+        <mat-radio-button [value]="'邮件'">邮件</mat-radio-button>
+    </mat-radio-group>
+    <mat-form-field>
+      <input matInput [placeholder]="info.channelType" [(ngModel)]="info.channelVal" name="channelVal">
+    </mat-form-field>
+
+    <mat-form-field>
+      <textarea matInput placeholder="说明"></textarea>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-select placeholder="联系时间" (selectionChange)="contactTimeChange()">
+        <mat-option value="‘任何时间’">任何时间</mat-option>
+        <mat-option value="‘工作日’">工作日</mat-option>
+        <mat-option value="‘尽快联系’">尽快联系</mat-option>
+        <mat-option value="‘其他’">其他</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <button mat-flat-button color="primary">提交联系信息</button>
+  </form>
+</div>
