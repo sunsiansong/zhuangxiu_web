@@ -1,8 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CaseCardComponent } from './case-card.component';
-import { MaterialModule } from '../../../material.module';
 import { MOCK_CASES } from '../../../../test/example.data';
+import { MyModule } from '../../../my/my.module';
+import { TestImportModule } from '../../../test-import/test-import.module';
 
 describe('CaseCardComponent', () => {
   let component: CaseCardComponent;
@@ -11,7 +12,7 @@ describe('CaseCardComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ CaseCardComponent ],
-      imports: [MaterialModule]
+      imports: [TestImportModule]
     })
     .compileComponents();
   }));

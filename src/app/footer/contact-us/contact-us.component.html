@@ -1,4 +1,4 @@
-<div>
+<div [hidden]="true">
   <h4>取得联系</h4>
 
   <form class="contact-form">
@@ -23,6 +23,16 @@
       <mat-select placeholder="联系时间">
         <mat-option [value]="e" *ngFor="let e of preset.CONTACT_TIME">{{e}}</mat-option>
       </mat-select>
+    </mat-form-field>
+
+
+    <mat-form-field class="example-full-width">
+      <input type="text" placeholder="联系时间" aria-label="text" matInput [(ngModel)]="info.contactTime" name="contactTime" [matAutocomplete]="auto">
+      <mat-autocomplete #auto="matAutocomplete">
+        <mat-option *ngFor="let option of preset.CONTACT_TIME" [value]="option">
+          {{option}}
+        </mat-option>
+      </mat-autocomplete>
     </mat-form-field>
 
     <button mat-flat-button color="primary">提交联系信息</button>

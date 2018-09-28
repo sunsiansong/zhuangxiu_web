@@ -21,11 +21,11 @@ export class HomeComponent implements OnInit {
 
   state: HomeState;
 
-  constructor(private dataService: PageDataService) {}
+  constructor(private pageDataService: PageDataService) {}
 
   ngOnInit() {
     this.message = 'Hello';
-    this.dataService.homeData()
+    this.pageDataService.homeData()
       .subscribe(data => this.state = data, err => alert('homeDataErr'));
   }
 

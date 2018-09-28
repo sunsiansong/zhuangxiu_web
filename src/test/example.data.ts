@@ -28,7 +28,7 @@ export const MOCK_CASES: Case[] = [
     },
     {
         id: 233,
-        title: '小户型之王',
+        title: '独栋别墅',
         coverImageUrl: 'https://via.placeholder.com/350x150',
         summary: '其实我一定也不懂装修',
         viewCount: 666,
@@ -36,7 +36,7 @@ export const MOCK_CASES: Case[] = [
     },
     {
         id: 233,
-        title: '大开间的灵活应用',
+        title: '复合功能建筑设计',
         coverImageUrl: 'https://via.placeholder.com/350x150',
         summary: '其实我一定也不懂装修66666',
         viewCount: 666,
@@ -44,7 +44,7 @@ export const MOCK_CASES: Case[] = [
     },
     {
         id: 233,
-        title: '其实我想要个别墅',
+        title: '我只是不想看到重复的东西。。。',
         coverImageUrl: 'https://via.placeholder.com/350x150',
         summary: '其实我一定也不懂装修23333',
         viewCount: 666,

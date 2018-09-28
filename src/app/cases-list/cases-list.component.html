@@ -1,3 +1,48 @@
-<p>
-  cases-list works!
-</p>
+<!-- 基于Tab的过滤-->
+<!-- <div [hidden]="true">
+
+  <ng-container *ngIf="(asyncStyles | async) === null">
+    Loading tabs...
+  </ng-container>
+
+  <mat-tab-group>
+    <mat-tab *ngFor="let tab of asyncStyles | async">
+      <ng-template mat-tab-label>{{tab.label}}</ng-template>
+      {{tab.content}}
+    </mat-tab>
+  </mat-tab-group>
+</div> -->
+
+<!-- 基于Radio的过滤 -->
+<div [hidden]="false" *ngIf="data">
+  <label>风格</label>
+  <mat-radio-group [(ngModel)]="state.style" name="style">
+    <mat-radio-button *ngFor="let e of asyncStyles | async" [value]="e">{{e.label}}</mat-radio-button>
+  </mat-radio-group>
+
+  <div style="text-align: right;">
+    <label>排序：</label>
+    <table matSort [matSortActive]="state.sort" [matSortDirection]="state.sortDirection" (matSortChange)="sortChange($event)"
+      style="float: right;">
+      <tr>
+        <th mat-sort-header="viewCount">浏览量</th>
+        <th mat-sort-header="createDate">发布时间</th>
+        <th mat-sort-header="default">default</th>
+      </tr>
+    </table>
+  </div>
+
+
+
+  <br />
+
+  <mat-grid-list cols="3" [gutterSize]="8">
+    <mat-grid-tile *ngFor="let c of data.page.datas" >
+        <app-case-card [case]="c"></app-case-card>
+    </mat-grid-tile>
+</mat-grid-list>
+
+  <mat-paginator [length]="data.page.length" [pageSize]="data.page.pageSize" [pageSizeOptions]="[10, 20, 50, 100]"
+    (page)="pageChange($event)">
+  </mat-paginator>
+</div>

@@ -1,25 +1,24 @@
-import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
-import { ContactUsComponent } from './contact-us.component';
+import { RouterModule } from '@angular/router';
 import { MyModule } from '../../my/my.module';
 import { TestImportModule } from '../../test-import/test-import.module';
+import { HomeArticlesComponent } from './home-articles.component';
 
-describe('ContactUsComponent', () => {
-  let component: ContactUsComponent;
-  let fixture: ComponentFixture<ContactUsComponent>;
+describe('HomeArticlesComponent', () => {
+  let component: HomeArticlesComponent;
+  let fixture: ComponentFixture<HomeArticlesComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ContactUsComponent ],
+      declarations: [ HomeArticlesComponent ],
       imports: [TestImportModule]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ContactUsComponent);
+    fixture = TestBed.createComponent(HomeArticlesComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
