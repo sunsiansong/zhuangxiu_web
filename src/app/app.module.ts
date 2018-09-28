@@ -5,7 +5,7 @@ import { RouterModule } from "@angular/router";
 
 import { AppComponent } from "./app.component";
 import { TransferHttpCacheModule } from "@nguniversal/common";
-import { MyModule } from "./my/my.module";
+import { MyModule } from "./my.module";
 
 
 @NgModule({

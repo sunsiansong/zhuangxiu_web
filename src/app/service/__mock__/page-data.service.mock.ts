@@ -25,7 +25,7 @@ export class MockPageDataService extends PageDataService {
 
   constructor() {
     super();
-    console.log("mock service created");
+    // console.log("mock service created");
   }
 
   homeData(): Observable<HomeState> {

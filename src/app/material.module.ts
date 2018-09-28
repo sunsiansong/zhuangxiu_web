@@ -18,7 +18,6 @@ import {
   MatTableModule,
   MatTabsModule,
 } from "@angular/material";
-import { RouterModule } from "@angular/router";
 
 
 @NgModule({
@@ -39,7 +38,6 @@ import { RouterModule } from "@angular/router";
     MatSortModule,
     MatTableModule,
     MatTabsModule,
-    RouterModule,
   ],
   imports: [
     MatAutocompleteModule,
@@ -58,7 +56,6 @@ import { RouterModule } from "@angular/router";
     MatSortModule,
     MatTableModule,
     MatTabsModule,
-    RouterModule,
   ]
 })
 export class MaterialModule {}

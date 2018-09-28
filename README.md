@@ -30,6 +30,12 @@ started from [angular universal](https://github.com/angular/universal-starter)
     - [done] jest unit test
     - [TODO] cypress e2e test
 
+## 文案
+
+```
+勉强带点 TDD
+```
+
 ## 取得联系
 mailto: sunsiansong#163.com
 

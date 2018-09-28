@@ -3,7 +3,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { HomeNewsComponent } from './home-news.component';
 import { ReadableDatePipe } from "../../common/pipes/readable-date.pipe";
 import { MOCK_POSTS_NEWS } from '../../../test/example.data';
-import { TestImportModule } from '../../test-import/test-import.module';
+import { TestImportModule } from '../../test-import.module';
 
 describe('HomeNewsComponent', () => {
   let component: HomeNewsComponent;

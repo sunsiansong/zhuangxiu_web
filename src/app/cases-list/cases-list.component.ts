@@ -70,7 +70,7 @@ export class CasesListComponent implements OnInit {
         alert("failed to fetch casesListData");
       },
       () => {
-        console.log("fetch cases list data done");
+        // console.log("fetch cases list data done");
       }
     );
   }
