@@ -15,7 +15,7 @@ export class HomeNewsComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    console.info('news:', this.news);
+    // console.info('news:', this.news);
   }
 
 }

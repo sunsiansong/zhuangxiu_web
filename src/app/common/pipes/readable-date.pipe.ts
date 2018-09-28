@@ -38,7 +38,7 @@ export class ReadableDatePipe implements PipeTransform {
     }
 
     const d: moment.Moment = moment(value);
-    const now: moment.Moment = moment(args[0] || new Date);
+    const now: moment.Moment = moment((args && args[0]) || new Date);
 
     if (d.isAfter(now)) {
       return ERR_TEXT.futureDate;

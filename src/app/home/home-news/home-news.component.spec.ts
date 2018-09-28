@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
 
 import { HomeNewsComponent } from './home-news.component';
+import { ReadableDatePipe } from "../../common/pipes/readable-date.pipe";
 import { MaterialModule } from '../../material.module';
 import { MOCK_POSTS_NEWS } from '../../../test/example.data';
 
@@ -10,8 +12,8 @@ describe('HomeNewsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ HomeNewsComponent ],
-      imports: [MaterialModule]
+      declarations: [ HomeNewsComponent, ReadableDatePipe ],
+      imports: [FormsModule, MaterialModule]
     })
     .compileComponents();
   }));
