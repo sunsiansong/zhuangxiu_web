@@ -1,6 +1,8 @@
 <mat-card *ngIf="case">
     <img mat-card-image [src]="case.coverImageUrl" />
-    <mat-card-title>{{case.title}}</mat-card-title>
+    <mat-card-title>
+        <a [routerLink]="'/cases/' + case.id" class="news-title">{{case.title}}</a>
+    </mat-card-title>
     <mat-card-content>{{case.summary}}</mat-card-content>
     <mat-card-footer>
         <mat-chip-list class="" *ngIf="case.tags">

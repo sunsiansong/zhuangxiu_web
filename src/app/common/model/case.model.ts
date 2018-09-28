@@ -1,4 +1,5 @@
 export class Case {
+    id?: number;
     title: string;
     styles?: string[];
     /** 封面图 */

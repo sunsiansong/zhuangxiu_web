@@ -21,6 +21,14 @@ import { HomeArtilesComponent } from "./home/home-artiles/home-artiles.component
 import { environment } from "../environments/environment";
 import { ReadableDatePipe } from "./common/pipes/readable-date.pipe";
 import { ContactUsComponent } from "./footer/contact-us/contact-us.component";
+import { AppRoutingModule } from './app-routing.module';
+import { CasesListComponent } from './cases-list/cases-list.component';
+import { PostsListComponent } from './posts-list/posts-list.component';
+import { MessagesListComponent } from './messages-list/messages-list.component';
+import { AboutPageComponent } from './about-page/about-page.component';
+import { CaseDetailComponent } from './case-detail/case-detail.component';
+import { PostDetailComponent } from './post-detail/post-detail.component';
+import { LikesPageComponent } from './likes-page/likes-page.component';
 
 const serviceProviders: Provider[] = environment.mockService
   ? [{ provide: PageDataService, useClass: MockPageDataService }]
@@ -40,7 +48,14 @@ const serviceProviders: Provider[] = environment.mockService
     HomeBannerComponent,
     HomeNewsComponent,
     HomeArtilesComponent,
-    ContactUsComponent
+    ContactUsComponent,
+    CasesListComponent,
+    PostsListComponent,
+    MessagesListComponent,
+    AboutPageComponent,
+    CaseDetailComponent,
+    PostDetailComponent,
+    LikesPageComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: "my-app" }),
@@ -48,11 +63,11 @@ const serviceProviders: Provider[] = environment.mockService
     FormsModule,
     MaterialModule,
     RouterModule.forRoot([
-      { path: "", component: HomeComponent, pathMatch: "full" },
       { path: "lazy", loadChildren: "./lazy/lazy.module#LazyModule" },
       { path: "lazy/nested", loadChildren: "./lazy/lazy.module#LazyModule" }
     ]),
-    TransferHttpCacheModule
+    TransferHttpCacheModule,
+    AppRoutingModule
   ],
   providers: serviceProviders,
   bootstrap: [AppComponent]
