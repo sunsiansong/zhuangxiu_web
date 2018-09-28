@@ -1,3 +1,8 @@
-<p>
-  posts-list works!
-</p>
+<div *ngIf="state.data">
+  <mat-grid-list [cols]="2">
+    <mat-grid-tile *ngFor="let channel of state.data.channels">
+      <app-channel-posts [channel]="channel"></app-channel-posts>
+    </mat-grid-tile>
+
+  </mat-grid-list>
+</div>

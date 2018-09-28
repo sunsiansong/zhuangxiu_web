@@ -4,10 +4,13 @@ import { Observable } from 'rxjs';
 import { PageData } from '../common/model/page.model';
 import { Case } from '../common/model/case.model';
 import { CasesCompData } from '../cases-list/cases-list.component';
+import { PostsPageData } from '../posts-list/posts-list.component';
 
 @Injectable()
 export abstract class PageDataService {
   abstract homeData(): Observable<HomeState>;
 
   abstract casesListData(): Observable<CasesCompData>;
+
+  abstract postsPageData(): Observable<PostsPageData>;
 }

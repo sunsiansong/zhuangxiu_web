@@ -9,9 +9,35 @@ import {
 } from "../../../test/example.data";
 import { CasesCompData } from "../../cases-list/cases-list.component";
 import { Injectable } from "@angular/core";
+import { PostsPageData } from "../../posts-list/posts-list.component";
 
 @Injectable()
 export class MockPageDataService extends PageDataService {
+  postsPageData(): Observable<PostsPageData> {
+    return of({
+      now: new Date,
+      channels: [
+        {
+          name: '公司新闻/动态',
+          page: {
+            page: 1,
+            pageSize: 5,
+            length: 20,
+            datas: MOCK_POSTS_NEWS
+          }
+        },
+        {
+          name: '装修知识',
+          page: {
+            page: 1,
+            pageSize: 5,
+            length: 20,
+            datas: MOCK_POSTS_ARTICLES
+          }
+        },
+      ]
+    });
+  }
   casesListData(): Observable<CasesCompData> {
     return of({
       page: {

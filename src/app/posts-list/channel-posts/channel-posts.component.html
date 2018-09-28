@@ -1,0 +1,17 @@
+<div *ngIf="channel">
+  <h4>{{channel.name}}</h4>
+  <mat-list role="list">
+      <mat-list-item *ngFor="let post of channel.page.datas" role="listitem">
+        {{post.title}}
+      </mat-list-item>
+    </mat-list>
+
+    <mat-paginator [length]="channel.page.length" [pageSize]="channel.page.pageSize" [pageSizeOptions]="[10, 20, 50, 100]"
+    (page)="pageChange($event)">
+  </mat-paginator>
+
+</div>
+
+<ng-template #noDataView>
+    <mat-chip color="accent" selected>Channel-posts no channel data!</mat-chip>
+</ng-template>

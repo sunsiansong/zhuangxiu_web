@@ -37,10 +37,10 @@
   <br />
 
   <mat-grid-list cols="3" [gutterSize]="8">
-    <mat-grid-tile *ngFor="let c of data.page.datas" >
-        <app-case-card [case]="c"></app-case-card>
+    <mat-grid-tile *ngFor="let c of data.page.datas">
+      <app-case-card [case]="c"></app-case-card>
     </mat-grid-tile>
-</mat-grid-list>
+  </mat-grid-list>
 
   <mat-paginator [length]="data.page.length" [pageSize]="data.page.pageSize" [pageSizeOptions]="[10, 20, 50, 100]"
     (page)="pageChange($event)">

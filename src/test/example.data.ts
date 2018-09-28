@@ -1,5 +1,6 @@
 import { Case } from "../app/common/model/case.model";
 import { Post } from "../app/common/model/post.model";
+import { VisitorLeaveWords } from "../app/common/model/visitor-leave-words.model";
 
 export const MOCK_CASES: Case[] = [
     {
@@ -88,7 +89,7 @@ export const MOCK_POSTS_NEWS: Post[] = [
     },
     {
         id: 233,
-        title: '网站上线了，看看我活好么？。。。好的话给我介绍对象。。。',
+        title: '网站上线了，看看我技术好么？。。。好的话给我介绍工作。。。',
         viewCount: 999,
         tags: [],
         topped: false,
@@ -148,3 +149,58 @@ export const MOCK_CONFIG_MAP = {
             -- 哥白尼2
     `
 };
+
+export const MOCK_VISITOR_LEAVE_WORDS: VisitorLeaveWords[] = [
+    {
+        name: '张老板',
+        content: '小李可以的，画的图很好看，施工也到位，很满意',
+        createDate: new Date
+    },
+    {
+        name: '孙先生',
+        content: '老孙到此一游',
+        createDate: new Date
+    },
+    {
+        name: '脑洞哥',
+        content: '女娲都补不了哥的寂寞',
+        createDate: new Date
+    },
+    {
+        name: '健身房刘总',
+        content: '我家的健身房就是这个公司弄的，自从用了你们的设计，客源 UP UP UP,今晚务必给你们员工加鸡腿',
+        createDate: new Date
+    },
+    {
+        name: '淘宝小仙女',
+        createDate: new Date,
+        // tslint:disable-next-line:max-line-length
+        content: '好评好评，因为我好看，所以穿着也好看，哈哈哈哈哈哈哈哈哈(ಡωಡ)hiahiahia(ಡωಡ)hiahiahia。朋友都说好看，配个牛仔外套或者休闲的外套都可以，弹力大，修身，反正就是喜欢。就怕多穿两次变形。但是还是很喜欢。变形了再买，哈哈哈哈(ಡωಡ)hiahiahia喜欢喜欢喜欢喜欢。'
+    },
+    {
+        name: '某水军',
+        content: '666',
+        createDate: new Date
+    },
+    {
+        name: '贾布斯',
+        content: 'These gays totaly redefined zhuangxiu',
+        createDate: new Date
+    },
+    {
+        name: '仙女2',
+        content: '漂亮，显身材',
+        createDate: new Date
+    },
+    {
+        name: '我',
+        content: '这个啊，录个1080p+果然是吃机器，风扇哗哗的响，要不是买了apple care+,还是会心疼的',
+        createDate: new Date
+    },
+    {
+        name: '淘宝小马',
+        content: '一身穿上超温柔 修身的连衣裙很好穿 搭这个针织衫或者牛仔外套都可以 左边有个开叉的小设计 长度的话我身高169穿上刚好到膝盖 刚刚好的长度 防走光裤都可以不用穿 胸前是小V领 隐约的小性感 总之就是很喜欢~下面搭个小白鞋或者平底单鞋都可以',
+        createDate: new Date
+    },
+];
+

@@ -20,7 +20,6 @@ import { HomeNewsComponent } from "./home/home-news/home-news.component";
 import { ContactUsComponent } from "./footer/contact-us/contact-us.component";
 import { CasesListComponent } from "./cases-list/cases-list.component";
 import { PostsListComponent } from "./posts-list/posts-list.component";
-import { MessagesListComponent } from "./messages-list/messages-list.component";
 import { AboutPageComponent } from "./about-page/about-page.component";
 import { CaseDetailComponent } from "./case-detail/case-detail.component";
 import { PostDetailComponent } from "./post-detail/post-detail.component";
@@ -28,6 +27,8 @@ import { LikesPageComponent } from "./likes-page/likes-page.component";
 import { MaterialModule } from "./material.module";
 import { AppRoutingModule } from "./app-routing.module";
 import { HomeArticlesComponent } from "./home/home-articles/home-articles.component";
+import { ChannelPostsComponent } from './posts-list/channel-posts/channel-posts.component';
+import { LeaveWordsComponent } from './leave-words/leave-words.component';
 
 const basicServiceProviders: Provider[] = [
   { provide: MatPaginatorIntl, useClass: MatPaginatorIntlService }
@@ -55,11 +56,12 @@ const optionalServiceProviders = environment.mockService
     ContactUsComponent,
     CasesListComponent,
     PostsListComponent,
-    MessagesListComponent,
     AboutPageComponent,
     CaseDetailComponent,
     PostDetailComponent,
-    LikesPageComponent
+    LikesPageComponent,
+    ChannelPostsComponent,
+    LeaveWordsComponent
   ],
   exports: [MaterialModule],
   providers: [...basicServiceProviders, ...optionalServiceProviders]

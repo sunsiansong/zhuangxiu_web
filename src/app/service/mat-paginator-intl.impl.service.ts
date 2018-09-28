@@ -1,10 +1,6 @@
-import { Injectable } from '@angular/core';
 import { MatPaginatorIntl } from '@angular/material/paginator';
-import { Subject, Observable } from 'rxjs';
+import { Subject } from 'rxjs';
 
-// @Injectable({
-//   providedIn: 'root'
-// })
 export class MatPaginatorIntlService implements MatPaginatorIntl {
   changes: Subject<void> = new Subject<void>();
   itemsPerPageLabel = '每页显示/条';
@@ -28,7 +24,7 @@ export class MatPaginatorIntlService implements MatPaginatorIntl {
         Math.min(startIndex + pageSize, length) :
         startIndex + pageSize;
 
-    return `${startIndex + 1} - ${endIndex} 之 ${length}`;
+    return `${startIndex + 1} - ${endIndex} / ${length}`;
   }
 
   constructor() { }
