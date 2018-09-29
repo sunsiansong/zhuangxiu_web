@@ -6,7 +6,6 @@ import { SortDirection, PageEvent } from "@angular/material";
 import { PageData } from "../common/model/page.model";
 import { Case } from "../common/model/case.model";
 import { PageDataService } from "../service/page-data.service";
-import { MockPageDataService } from "../service/__mock__/page-data.service.mock";
 
 export interface ExampleTab {
   label: string;
@@ -39,14 +38,14 @@ export class CasesListComponent implements OnInit {
   data: CasesCompData;
   // MatPaginator Output
   pageEvent: PageEvent;
-  dataService = new MockPageDataService();
+  // dataService = new MockPageDataService();
 
   pageChange(e: PageEvent) {
     console.log("pageChange", e);
   }
 
-  // constructor(private dataService: PageDataService) {
-  constructor() {
+  constructor(private pageDataService: PageDataService) {
+  // constructor() {
     this.asyncStyles = Observable.create((observer: Observer<ExampleTab[]>) => {
       setTimeout(() => {
         observer.next([
@@ -62,7 +61,7 @@ export class CasesListComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.dataService.casesListData().subscribe(
+    this.pageDataService.casesListData().subscribe(
       res => {
         this.data = res;
       },

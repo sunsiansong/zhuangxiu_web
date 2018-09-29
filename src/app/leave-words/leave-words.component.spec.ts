@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { LeaveWordsComponent } from './leave-words.component';
+import { TestImportModule } from '../test-import.module';
+import { ReadableDatePipe } from '../common/pipes/readable-date.pipe';
 
 describe('LeaveWordsComponent', () => {
   let component: LeaveWordsComponent;
@@ -8,7 +10,8 @@ describe('LeaveWordsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ LeaveWordsComponent ]
+      declarations: [ LeaveWordsComponent, ReadableDatePipe ],
+      imports: [TestImportModule]
     })
     .compileComponents();
   }));

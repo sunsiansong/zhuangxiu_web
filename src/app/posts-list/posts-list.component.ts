@@ -3,6 +3,7 @@ import { PageData } from '../common/model/page.model';
 import { Post } from '../common/model/post.model';
 import { PageDataService } from '../service/page-data.service';
 import { ChannelData } from './channel-posts/channel-posts.component';
+import { MockPageDataService } from '../service/__mock__/page-data.service.mock';
 
 export interface PostsCompState {
   data?: PostsPageData;
@@ -22,8 +23,11 @@ export interface PostsPageData {
 export class PostsListComponent implements OnInit {
 
   state: PostsCompState = {};
-
-  constructor(private dataService: PageDataService) { }
+  private dataService: PageDataService;
+  // constructor(private dataService: PageDataService) { }
+  constructor() {
+    this.dataService = new MockPageDataService();
+   }
 
   ngOnInit() {
     this.dataService.postsPageData()

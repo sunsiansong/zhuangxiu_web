@@ -42,13 +42,17 @@ export class LeaveWordsComponent implements OnInit {
     this.genTiles();
   }
 
+  reset() {
+    this.tiles = [];
+  }
+
   genTiles() {
     const p = MOCK_VISITOR_LEAVE_WORDS.sort((a, b) => {
       return Fn.getRandomInt(3) % 2 > 0 ? 1 : -1;
     });
-    console.log(p);
+    // console.log(p);
     this.tiles = this.tiles.concat(this.toTiles(p));
-    console.log('tiles', this.tiles);
+    // console.log('tiles', this.tiles);
   }
 
 

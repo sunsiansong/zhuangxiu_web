@@ -12,8 +12,7 @@ describe('CaseCardComponent', () => {
     TestBed.configureTestingModule({
       declarations: [ CaseCardComponent ],
       imports: [TestImportModule]
-    })
-    .compileComponents();
+    }).compileComponents();
   }));
 
   beforeEach(() => {

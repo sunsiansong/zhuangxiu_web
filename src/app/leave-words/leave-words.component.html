@@ -1,6 +1,6 @@
 <h1 style="color: green;">留言墙</h1>
 <div [style.textAlign]="'right'">
-  <button mat-fab color="accent" (click)="genTiles()">刷</button>
+  <button mat-fab color="accent" (click)="reset()">刷</button>
 </div>
 <mat-grid-list cols="4" rowHeight="100px">
   <mat-grid-tile *ngFor="let tile of tiles" [colspan]="tile.cols" [rowspan]="tile.rows" [style.background]="tile.color.bg"
