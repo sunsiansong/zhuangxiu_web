@@ -12,4 +12,6 @@ export interface PageDataService {
   casesListData(): Observable<CasesCompData>;
 
   postsPageData(): Observable<PostsPageData>;
+
+  aboutPageData(): Observable<any>;
 }

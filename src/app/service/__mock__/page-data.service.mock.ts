@@ -5,13 +5,17 @@ import {
   MOCK_CASES,
   MOCK_POSTS_NEWS,
   MOCK_POSTS_ARTICLES,
-  MOCK_CONFIG_MAP
+  MOCK_CONFIG_MAP,
+  MOCK_CONFIGS
 } from "../../../test/example.data";
 import { CasesCompData } from "../../cases-list/cases-list.component";
 import { Injectable } from "@angular/core";
 import { PostsPageData } from "../../posts-list/posts-list.component";
 
 export class MockPageDataService implements PageDataService {
+  aboutPageData(): Observable<any> {
+    return of(MOCK_CONFIGS);
+  }
   postsPageData(): Observable<PostsPageData> {
     return of({
       now: new Date,

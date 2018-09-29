@@ -1,3 +1,38 @@
-<p>
-  about-page works!
-</p>
+<mat-sidenav-container class="example-container">
+  <mat-sidenav mode="side" opened>
+    
+      <mat-nav-list>
+          <a mat-list-item (click)="scrollTo(infoHref)" > 公司概况 </a>
+          <a mat-list-item (click)="scrollTo(teamHref)" > 我们的团队 </a>
+          <a mat-list-item (click)="scrollTo(cultureHref)" > 文化 </a>
+          <a mat-list-item (click)="scrollTo(addressHref)" > 联系我们 </a>
+          <a mat-list-item (click)="scrollTo(jobsHref)" > 招聘 </a>
+       </mat-nav-list>
+    
+  </mat-sidenav>
+  <mat-sidenav-content>
+    Main content
+    <div #infoHref>
+      <h3>公司概况</h3>
+      <p [innerHTML]="state.info!.val"></p>
+    </div>
+
+    <div #teamHref>
+      <h3>团队</h3>
+      <p [innerHTML]="state.team!.val"></p>
+    </div>
+    <div #cultureHref>
+      <h3>团队文化</h3>
+      <p [innerHTML]="state.culture!.val"></p>
+    </div>
+    <div #addressHref>
+      <h3>地址</h3>
+      <p [innerHTML]="state.address!.val"></p>
+    </div>
+    <div #jobsHref>
+      <h3>工作机会</h3>
+      <p [innerHTML]="state.jobs!.val"></p>
+    </div>
+  
+  </mat-sidenav-content>
+</mat-sidenav-container>

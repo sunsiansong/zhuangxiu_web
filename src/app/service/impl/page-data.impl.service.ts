@@ -6,6 +6,9 @@ import { PostsPageData } from '../../posts-list/posts-list.component';
 import { Injectable } from '@angular/core';
 
 export class PageDataImplServie implements PageDataService {
+    aboutPageData(): Observable<any> {
+        throw new Error("Method not implemented.");
+    }
     postsPageData(): Observable<PostsPageData> {
         throw new Error("Method not implemented.");
     }

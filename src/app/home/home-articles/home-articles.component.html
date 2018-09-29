@@ -1,9 +1,9 @@
 <h4>文章/知识/行情</h4>
-<mat-list>
+<mat-nav-list>
     <mat-list-item *ngFor="let a of articles">
         <a [routerLink]="'/posts/' + a.id" class="news-title">{{a.title}}</a>
     </mat-list-item>
-</mat-list>
+</mat-nav-list>
 
 <div style="text-align: right;">
     <a [routerLink]="">more</a>
