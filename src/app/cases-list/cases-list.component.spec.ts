@@ -14,6 +14,7 @@ describe("CasesListComponent", () => {
     TestBed.configureTestingModule({
       declarations: [CasesListComponent, CaseCardComponent],
       providers: [
+        { provide: PageDataService, useClass: MockPageDataService },
       ],
       imports: [TestImportModule],
     }).compileComponents();

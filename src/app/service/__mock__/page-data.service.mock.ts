@@ -11,8 +11,7 @@ import { CasesCompData } from "../../cases-list/cases-list.component";
 import { Injectable } from "@angular/core";
 import { PostsPageData } from "../../posts-list/posts-list.component";
 
-@Injectable()
-export class MockPageDataService extends PageDataService {
+export class MockPageDataService implements PageDataService {
   postsPageData(): Observable<PostsPageData> {
     return of({
       now: new Date,
@@ -50,7 +49,6 @@ export class MockPageDataService extends PageDataService {
   }
 
   constructor() {
-    super();
     // console.log("mock service created");
   }
 

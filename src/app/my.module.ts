@@ -1,5 +1,5 @@
 import { FormsModule } from "@angular/forms"; // <-- NgModel lives here
-import { NgModule, Provider } from "@angular/core";
+import { NgModule, Provider, InjectionToken } from "@angular/core";
 import { MatPaginatorIntl } from "@angular/material";
 
 import { MatPaginatorIntlService } from "./service/mat-paginator-intl.impl.service";
@@ -29,14 +29,16 @@ import { AppRoutingModule } from "./app-routing.module";
 import { HomeArticlesComponent } from "./home/home-articles/home-articles.component";
 import { ChannelPostsComponent } from './posts-list/channel-posts/channel-posts.component';
 import { LeaveWordsComponent } from './leave-words/leave-words.component';
+import { DATA_SERVICE } from "./const.instance";
 
 const basicServiceProviders: Provider[] = [
   { provide: MatPaginatorIntl, useClass: MatPaginatorIntlService }
 ];
 
+
 const optionalServiceProviders = environment.mockService
-  ? [{ provide: PageDataService, useClass: MockPageDataService }]
-  : [{ provide: PageDataService, useClass: PageDataImplServie }];
+  ? [{ provide: DATA_SERVICE, useClass: MockPageDataService }]
+  : [{ provide: DATA_SERVICE, useClass: PageDataImplServie }];
 
 @NgModule({
   imports: [CommonModule, FormsModule, MaterialModule, AppRoutingModule],

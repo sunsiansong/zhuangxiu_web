@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Inject } from "@angular/core";
 import { Observable, Observer } from "rxjs";
 
 import { SortDirection, PageEvent } from "@angular/material";
@@ -6,6 +6,7 @@ import { SortDirection, PageEvent } from "@angular/material";
 import { PageData } from "../common/model/page.model";
 import { Case } from "../common/model/case.model";
 import { PageDataService } from "../service/page-data.service";
+import { DATA_SERVICE } from "../const.instance";
 
 export interface ExampleTab {
   label: string;
@@ -38,13 +39,12 @@ export class CasesListComponent implements OnInit {
   data: CasesCompData;
   // MatPaginator Output
   pageEvent: PageEvent;
-  // dataService = new MockPageDataService();
 
   pageChange(e: PageEvent) {
     console.log("pageChange", e);
   }
 
-  constructor(private pageDataService: PageDataService) {
+  constructor(@Inject(DATA_SERVICE) private pageDataService: PageDataService) {
   // constructor() {
     this.asyncStyles = Observable.create((observer: Observer<ExampleTab[]>) => {
       setTimeout(() => {

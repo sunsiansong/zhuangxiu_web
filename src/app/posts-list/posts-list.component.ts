@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { PageData } from '../common/model/page.model';
 import { Post } from '../common/model/post.model';
 import { PageDataService } from '../service/page-data.service';
 import { ChannelData } from './channel-posts/channel-posts.component';
 import { MockPageDataService } from '../service/__mock__/page-data.service.mock';
+import { DATA_SERVICE } from '../const.instance';
 
 export interface PostsCompState {
   data?: PostsPageData;
@@ -23,10 +24,7 @@ export interface PostsPageData {
 export class PostsListComponent implements OnInit {
 
   state: PostsCompState = {};
-  private dataService: PageDataService;
-  // constructor(private dataService: PageDataService) { }
-  constructor() {
-    this.dataService = new MockPageDataService();
+  constructor(@Inject(DATA_SERVICE) private dataService: PageDataService) {
    }
 
   ngOnInit() {

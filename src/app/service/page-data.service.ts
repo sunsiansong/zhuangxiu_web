@@ -6,11 +6,10 @@ import { Case } from '../common/model/case.model';
 import { CasesCompData } from '../cases-list/cases-list.component';
 import { PostsPageData } from '../posts-list/posts-list.component';
 
-@Injectable()
-export abstract class PageDataService {
-  abstract homeData(): Observable<HomeState>;
+export interface PageDataService {
+  homeData(): Observable<HomeState>;
 
-  abstract casesListData(): Observable<CasesCompData>;
+  casesListData(): Observable<CasesCompData>;
 
-  abstract postsPageData(): Observable<PostsPageData>;
+  postsPageData(): Observable<PostsPageData>;
 }

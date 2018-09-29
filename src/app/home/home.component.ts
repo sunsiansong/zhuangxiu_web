@@ -1,8 +1,9 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, Inject} from '@angular/core';
 import { Case } from '../common/model/case.model';
 import { Post } from '../common/model/post.model';
 import { Config } from '../common/model/config.model';
 import { PageDataService } from '../service/page-data.service';
+import { DATA_SERVICE } from '../const.instance';
 
 export interface HomeState {
   now: Date;
@@ -21,7 +22,7 @@ export class HomeComponent implements OnInit {
 
   state: HomeState;
 
-  constructor(private pageDataService: PageDataService) {}
+  constructor(@Inject(DATA_SERVICE) private pageDataService: PageDataService) {}
 
   ngOnInit() {
     this.message = 'Hello';
