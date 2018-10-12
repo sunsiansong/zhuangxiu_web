@@ -7,6 +7,7 @@ import { PageData } from "../common/model/page.model";
 import { Case } from "../common/model/case.model";
 import { PageDataService } from "../service/page-data.service";
 import { DATA_SERVICE } from "../const.instance";
+import { Fn } from "../common/utils/fn.util";
 
 export interface ExampleTab {
   label: string;
@@ -21,13 +22,14 @@ export interface CasesCompState {
 
 export interface CasesCompData {
   page?: PageData<Case>;
+  tiles?: Case[][];
   now?: Date;
 }
 
 @Component({
   selector: "app-cases-list",
   templateUrl: "./cases-list.component.html",
-  styleUrls: ["./cases-list.component.css"]
+  styleUrls: ["./cases-list.component.scss"]
 })
 export class CasesListComponent implements OnInit {
   asyncStyles: Observable<ExampleTab[]>;
@@ -40,12 +42,14 @@ export class CasesListComponent implements OnInit {
   // MatPaginator Output
   pageEvent: PageEvent;
 
+  tileCols = 3;
+  tiles: Case[][];
+
   pageChange(e: PageEvent) {
     console.log("pageChange", e);
   }
 
   constructor(@Inject(DATA_SERVICE) private pageDataService: PageDataService) {
-  // constructor() {
     this.asyncStyles = Observable.create((observer: Observer<ExampleTab[]>) => {
       setTimeout(() => {
         observer.next([
@@ -56,7 +60,7 @@ export class CasesListComponent implements OnInit {
           { label: "简欧", content: "Content 3" },
           { label: "美式", content: "Content 3" }
         ]);
-      }, 1000);
+      }, 100);
     });
   }
 
@@ -64,6 +68,7 @@ export class CasesListComponent implements OnInit {
     this.pageDataService.casesListData().subscribe(
       res => {
         this.data = res;
+        this.data.tiles = Fn.calcTile(3, this.data.page.datas);
       },
       err => {
         alert("failed to fetch casesListData");

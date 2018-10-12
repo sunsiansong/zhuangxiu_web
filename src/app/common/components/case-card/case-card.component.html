@@ -1,9 +1,7 @@
 <mat-card *ngIf="case">
     <img mat-card-image [src]="case.coverImageUrl" />
     <mat-card-title>
-        <div style="word-break: keep-all; overflow: hidden;">
             <a [routerLink]="'/cases/' + case.id" class="case-title">{{case.title}}</a>
-        </div>
     </mat-card-title>
     <mat-card-content>{{case.summary}}</mat-card-content>
     <mat-card-footer>

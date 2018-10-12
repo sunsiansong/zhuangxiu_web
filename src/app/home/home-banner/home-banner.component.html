@@ -1,11 +1,10 @@
 <section>
-    <h4>「Banner」</h4>
+    <!-- <h4>Banner</h4> -->
     <div class="main-wrap">
-        <figure>
-            <img [src]="bgImgSrc"/>
+        <figure [style.background-image]="bgImgUrl">
+            <blockquote>
+                {{slogan}}
+            </blockquote>
         </figure>
-        <blockquote>
-            {{slogan}}
-        </blockquote>
     </div>
 </section>

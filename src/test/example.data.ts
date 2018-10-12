@@ -8,7 +8,7 @@ export const MOCK_CASES: Case[] = [
     {
         id: 233,
         title: '小户型之王',
-        coverImageUrl: 'https://via.placeholder.com/350x150',
+        coverImageUrl: 'https://via.placeholder.com/800x450',
         summary: '其实我一定也不懂装修',
         viewCount: 666,
         tags: ['日式风格', '小户型']
@@ -16,7 +16,7 @@ export const MOCK_CASES: Case[] = [
     {
         id: 233,
         title: '大开间的灵活应用',
-        coverImageUrl: 'https://via.placeholder.com/350x150',
+        coverImageUrl: 'https://via.placeholder.com/800x450',
         summary: '其实我一定也不懂装修66666',
         viewCount: 666,
         tags: ['日式风格', '创意']
@@ -24,7 +24,7 @@ export const MOCK_CASES: Case[] = [
     {
         id: 233,
         title: '其实我想要个别墅',
-        coverImageUrl: 'https://via.placeholder.com/350x150',
+        coverImageUrl: 'https://via.placeholder.com/450x450',
         summary: '其实我一定也不懂装修23333',
         viewCount: 666,
         tags: ['日式风格', '美式', '其他']
@@ -150,11 +150,15 @@ export const MOCK_CONFIGS: {[key: string]: Config} = {
         val: `“装饰的灵魂是设计，
         设计的灵魂是文化,设计就是以人为本。
         遵守自然法则，缔造经典家装。”
-            -- 哥白尼2`
+            -- 鲁迅`
     },
     homeBannerBgImgSrc: {
         key: 'homeBannerBgImgSrc',
         val: '/assets/images/bg.jpg',
+        // val: '/assets/images/bg1.webp',
+        // val: '/assets/images/bg2.webp',
+        // val: '/assets/images/bg3.webp',
+        // val: '/assets/images/bg4.jpg',
         description: '首页横幅背景图片url'
     },
     jobs: {

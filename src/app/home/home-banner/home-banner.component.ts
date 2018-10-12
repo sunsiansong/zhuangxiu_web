@@ -3,7 +3,7 @@ import { Component, OnInit, Input } from '@angular/core';
 @Component({
   selector: 'app-home-banner',
   templateUrl: 'home-banner.component.html',
-  styles: []
+  styleUrls: ['home-banner.component.scss']
 })
 export class HomeBannerComponent implements OnInit {
 
@@ -16,6 +16,10 @@ export class HomeBannerComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+  }
+
+  get bgImgUrl() {
+    return `url(${this.bgImgSrc})`;
   }
 
 }

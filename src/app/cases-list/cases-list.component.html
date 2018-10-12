@@ -14,35 +14,45 @@
 </div> -->
 
 <!-- 基于Radio的过滤 -->
+<app-home-banner [bgImgSrc]="'/assets/images/bg.jpg'" [slogan]="''"></app-home-banner>
 <div [hidden]="false" *ngIf="data">
-  <label>风格</label>
-  <mat-radio-group [(ngModel)]="state.style" name="style">
-    <mat-radio-button *ngFor="let e of asyncStyles | async" [value]="e">{{e.label}}</mat-radio-button>
-  </mat-radio-group>
+  <section class="style-filter">
+    <mat-radio-group [(ngModel)]="state.style" name="style" [labelPosition]="'after'">
+      <mat-radio-button *ngFor="let e of asyncStyles | async" [value]="e">{{e.label}}</mat-radio-button>
+    </mat-radio-group>
+    <div style="text-align: right;">
+      <!-- <label>排序：</label> -->
+      <table matSort [matSortActive]="state.sort" [matSortDirection]="state.sortDirection" (matSortChange)="sortChange($event)"
+        style="float: right;">
+        <tr>
+          <th mat-sort-header="viewCount">浏览量</th>
+          <th mat-sort-header="createDate">发布时间</th>
+          <!-- <th mat-sort-header="default">default</th> -->
+        </tr>
+      </table>
+    </div>
 
-  <div style="text-align: right;">
-    <label>排序：</label>
-    <table matSort [matSortActive]="state.sort" [matSortDirection]="state.sortDirection" (matSortChange)="sortChange($event)"
-      style="float: right;">
-      <tr>
-        <th mat-sort-header="viewCount">浏览量</th>
-        <th mat-sort-header="createDate">发布时间</th>
-        <th mat-sort-header="default">default</th>
-      </tr>
-    </table>
-  </div>
+  </section>
+
 
 
 
   <br />
 
-  <mat-grid-list cols="3" [gutterSize]="8">
-    <mat-grid-tile *ngFor="let c of data.page.datas">
-      <app-case-card [case]="c"></app-case-card>
+  <mat-grid-list cols="3" [gutterSize]="8" [rowHeight]="'800px'">
+    <mat-grid-tile *ngFor="let t of data.tiles">
+      <app-case-card [case]="case" *ngFor="let case of t"></app-case-card>
     </mat-grid-tile>
   </mat-grid-list>
 
   <mat-paginator [length]="data.page.length" [pageSize]="data.page.pageSize" [pageSizeOptions]="[10, 20, 50, 100]"
     (page)="pageChange($event)">
   </mat-paginator>
+  <p style="text-align: right;">
+    已载入[45]条，每次载入[15]条，剩余[120]条 「TODO」
+  </p>
+
+  <div [style.textAlign]="'center'">
+      <button mat-fab color="accent">更多</button>
+    </div>
 </div>
