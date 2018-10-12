@@ -1,4 +1,17 @@
 .contact-form {
     display: flex;
     flex-direction: column;   
+    height: 100%;
+    text-align: left;
 }
+
+div.contact-infos {
+    text-align: left;
+    height: 100%;
+}
+
+label.form-label {
+    color: rgba(0,0,0,.54);
+    font-size: 16px;
+    text-align: left;
+}   

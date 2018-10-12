@@ -1,15 +1,14 @@
-.topnav {
-    background-color: white;
-    height: 20px;
-}
-
-.topnav a {
-    float: left;
+.topnav ul li {
+    display: inline;
     color: lightpink;
     text-align: center;
+}
+
+.topnav ul li a {
     padding: 14px 16px;
     text-decoration: none;
-    font-size: 17px;
+    font-size: 1.3rem;
+    line-height: 1.5;
 }
 
 .topnav a:hover {
@@ -21,6 +20,6 @@
 }
 
 /* like btn */
-.topnav a.like {
+.topnav .like {
     float: right!important;
 }

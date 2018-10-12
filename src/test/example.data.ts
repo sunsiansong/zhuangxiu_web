@@ -2,6 +2,7 @@ import { Case } from "../app/common/model/case.model";
 import { Post } from "../app/common/model/post.model";
 import { VisitorLeaveWords } from "../app/common/model/visitor-leave-words.model";
 import { Config } from "../app/common/model/config.model";
+import { UserLike } from "../app/common/model/like.model";
 
 export const MOCK_CASES: Case[] = [
     {
@@ -287,6 +288,37 @@ export const MOCK_VISITOR_LEAVE_WORDS: VisitorLeaveWords[] = [
         name: '淘宝小马',
         content: '一身穿上超温柔 修身的连衣裙很好穿 搭这个针织衫或者牛仔外套都可以 左边有个开叉的小设计 长度的话我身高169穿上刚好到膝盖 刚刚好的长度 防走光裤都可以不用穿 胸前是小V领 隐约的小性感 总之就是很喜欢~下面搭个小白鞋或者平底单鞋都可以',
         createDate: new Date
+    },
+];
+
+export const MOCK_USER_LIKES: UserLike[] = [
+    {
+        title: '大开间的灵活应用',
+        type: '设计稿',
+        refId: 233,
+        url: '',
+        createTime: new Date,
+    },
+    {
+        title: '复合功能建筑设计'    ,
+        type: '设计稿',
+        refId: 233,
+        url: '',
+        createTime: new Date,
+    },
+    {
+        title: '说来你可能不信，这个牌子的瓷砖可以让你省一半钱',
+        type: '文章',
+        refId: 233,
+        url: '',
+        createTime: new Date,
+    },
+    {
+        title: '看看这个农村别墅，可6了，要是我有一块地，我也这么干',
+        type: '文章',
+        refId: 233,
+        url: '',
+        createTime: new Date,
     },
 ];
 

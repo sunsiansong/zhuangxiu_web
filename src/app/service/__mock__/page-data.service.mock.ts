@@ -6,13 +6,20 @@ import {
   MOCK_POSTS_NEWS,
   MOCK_POSTS_ARTICLES,
   MOCK_CONFIG_MAP,
-  MOCK_CONFIGS
+  MOCK_CONFIGS,
+  MOCK_USER_LIKES
 } from "../../../test/example.data";
 import { CasesCompData } from "../../cases-list/cases-list.component";
 import { Injectable } from "@angular/core";
 import { PostsPageData } from "../../posts-list/posts-list.component";
+import { Config } from "../../common/model/config.model";
+import { UserLike } from "../../common/model/like.model";
 
 export class MockPageDataService implements PageDataService {
+
+  configs(): Observable<{ [key: string]: Config; }> {
+    return of(MOCK_CONFIGS);
+  }
   aboutPageData(): Observable<any> {
     return of(MOCK_CONFIGS);
   }
@@ -67,4 +74,9 @@ export class MockPageDataService implements PageDataService {
     console.info("mock home data invoked");
     return of(state);
   }
+
+  userLikes(): Observable<UserLike[]> {
+    return of(MOCK_USER_LIKES);
+  }
+
 }

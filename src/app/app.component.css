@@ -1,7 +1,4 @@
-#main {
-}
-
-#main .main-wraper {
+.main-wraper {
     max-width: 1020px;
     margin: 0 auto;
 }

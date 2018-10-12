@@ -12,21 +12,11 @@ export class AboutPageComponent implements OnInit {
 
   state: any = {};
 
-  // @ViewChild('infoHref') infoHref: ElementRef;
-  // @ViewChild('teamHref') teamHref: ElementRef;
-  // @ViewChild('cultureHref') cultureHref: ElementRef;
-  // @ViewChild('addressHref') addressHref: ElementRef;
-  // @ViewChild('jobsHref') jobsHref: ElementRef;
-
   constructor(@Inject(DATA_SERVICE) private dataService: PageDataService) { }
 
   ngOnInit() {
     this.dataService.aboutPageData()
       .subscribe(res => this.state = res, err => alert('err'), () => console.log('about page fetch data done') );
-
-      setTimeout(() => {
-        // this.jobsHref.nativeElement.scrollIntoView({ behavior: "smooth", block: "start" });
-      }, 2000);
   }
 
   scrollTo(e) {

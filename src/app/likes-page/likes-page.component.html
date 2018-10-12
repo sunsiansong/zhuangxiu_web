@@ -1,3 +1,48 @@
-<p>
-  likes-page works!
-</p>
+<!-- 
+  list likes
+  remove from list
+
+  分享收藏，产生一条分享url,url在一段时间内有效（过期删除数据），localstoreage也存储分享信息（时间、id），避免重复数据
+-->
+
+<section>
+  <h2>我的收藏</h2>
+  <div style="text-align: right;">
+    <button mat-flat-button (click)="createShareUrl()" color="accent">分享我的收藏</button>
+  </div>
+
+  <table mat-table [dataSource]="likes">
+    <ng-container matColumnDef="title">
+      <th mat-header-cell *matHeaderCellDef> 标题 </th>
+      <td mat-cell *matCellDef="let like"> {{like.title}} </td>
+    </ng-container>
+    <ng-container matColumnDef="createTime">
+      <th mat-header-cell *matHeaderCellDef> 收藏日期 </th>
+      <td mat-cell *matCellDef="let like"> {{like.createTime|date:'yyyy/MM/dd HH:mm'}} </td>
+    </ng-container>
+    <ng-container matColumnDef="type">
+      <th mat-header-cell *matHeaderCellDef> 类型 </th>
+      <td mat-cell *matCellDef="let like"> {{like.type}} </td>
+    </ng-container>
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef> 操作 </th>
+      <td mat-cell *matCellDef="let like">
+
+        <button mat-icon-button color="link">
+          <mat-icon aria-label="前往" title="前往">open_in_new</mat-icon>
+        </button>
+        <button mat-icon-button>
+          <mat-icon aria-label="复制链接" title="复制链接">file_copy</mat-icon>
+        </button>
+        <button mat-icon-button color="warn">
+          <mat-icon aria-label="从列表种移除" title="从列表种移除">delete_outline</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+</section>

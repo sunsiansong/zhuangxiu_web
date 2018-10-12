@@ -39,7 +39,7 @@ describe('HomeNewsComponent', () => {
     const ele: HTMLElement = fixture.nativeElement;
     const textContent = ele.textContent;
 
-    const uiEle = ele.querySelector('mat-list');
+    const uiEle = ele.querySelector('mat-nav-list');
     // console.log('TEXT::' + uiEle.textContent);
     expect(uiEle.childElementCount).toBe(news.length);
 
