@@ -1,9 +1,10 @@
-<h3>精选设计</h3>
-<div class="home-cases-container">
-    <!-- <app-case-card *ngFor="let e of cases" [case]="e"></app-case-card> -->
-    <mat-grid-list cols="3" [gutterSize]="8">
-        <mat-grid-tile *ngFor="let c of cases" >
-            <app-case-card [case]="c"></app-case-card>
-        </mat-grid-tile>
-    </mat-grid-list>
-</div>
+<section>
+    <h3>精选设计</h3>
+    <div class="home-cases-container">
+        <mat-grid-list cols="3" [gutterSize]="8">
+            <mat-grid-tile *ngFor="let c of cases">
+                <app-case-card [case]="c"></app-case-card>
+            </mat-grid-tile>
+        </mat-grid-list>
+    </div>
+</section>

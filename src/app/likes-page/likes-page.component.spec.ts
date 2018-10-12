@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { LikesPageComponent } from './likes-page.component';
+import { TestImportModule } from '../test-import.module';
 
 describe('LikesPageComponent', () => {
   let component: LikesPageComponent;
@@ -8,7 +9,8 @@ describe('LikesPageComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ LikesPageComponent ]
+      declarations: [ LikesPageComponent ],
+      imports: [TestImportModule]
     })
     .compileComponents();
   }));

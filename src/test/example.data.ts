@@ -144,15 +144,19 @@ export const MOCK_POSTS_ARTICLES: Post[] = [
 ];
 
 
-export const MOCK_CONFIG_MAP = {
-    slogan: `“装饰的灵魂是设计，
-    设计的灵魂是文化,设计就是以人为本。
-    遵守自然法则，缔造经典家装。”
-            -- 哥白尼2
-    `
-};
-
 export const MOCK_CONFIGS: {[key: string]: Config} = {
+    slogan: {
+        key: 'slogan',
+        val: `“装饰的灵魂是设计，
+        设计的灵魂是文化,设计就是以人为本。
+        遵守自然法则，缔造经典家装。”
+            -- 哥白尼2`
+    },
+    homeBannerBgImgSrc: {
+        key: 'homeBannerBgImgSrc',
+        val: '/assets/images/bg.jpg',
+        description: '首页横幅背景图片url'
+    },
     jobs: {
         key: 'jobs',
         val: '招设计师，招施工监理，招CEO，招老板娘，招招招，什么都招'

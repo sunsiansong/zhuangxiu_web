@@ -11,7 +11,8 @@ import { HomeComponent } from "./home/home.component";
 import { LeaveWordsComponent } from "./leave-words/leave-words.component";
 
 const routes: Routes = [
-  { path: "", component: HomeComponent, pathMatch: "full" },
+  { path: '', redirectTo: 'index', pathMatch: 'full'},
+  { path: "index", component: HomeComponent, pathMatch: "full" },
 
   { path: "cases", component: CasesListComponent },
   { path: "cases/:id", component: CaseDetailComponent },

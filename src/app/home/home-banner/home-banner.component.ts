@@ -10,6 +10,8 @@ export class HomeBannerComponent implements OnInit {
 
   @Input()
   slogan: string;
+  @Input()
+  bgImgSrc: string;
 
   constructor() { }
 

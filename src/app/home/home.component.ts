@@ -10,7 +10,7 @@ export interface HomeState {
   cases: Case[];
   newsPosts: Post[];
   articlePosts: Post[];
-  configs: {[key: string]: string};
+  configs: {[key: string]: Config};
 }
 
 @Component({

@@ -1,0 +1,41 @@
+@import '../../theme';
+
+
+nav.topnav {
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+
+        li {
+            display: inline-block;
+            text-align: center;
+
+            a {
+                color: $color-cold;
+                display: block;
+                padding: 6px 12px;
+                text-decoration: none;
+                font-size: 1.3rem;
+                line-height: 1.5;
+
+            }
+            a.active, a:hover {
+                color: $color-warm;
+            }
+        }
+
+        li.like {
+            float: right;
+
+            a{
+                color: $color-warm;
+
+                mat-icon {
+                    position: relative;
+                    top: 4px;
+                }
+            }
+        }
+    }
+}

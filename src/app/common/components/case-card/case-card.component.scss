@@ -1,0 +1,14 @@
+a.case-title {
+    text-decoration: none;
+}
+
+
+:host {
+    // 666
+    // ref: https://blog.angular-university.io/angular-host-context/
+    // but, ::ng-deep will be deprecated in the future, keep track
+    ::ng-deep .mat-chip-list-wrapper {
+        justify-content: flex-end;
+    }
+
+}

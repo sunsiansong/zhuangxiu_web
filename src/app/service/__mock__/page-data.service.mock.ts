@@ -5,7 +5,6 @@ import {
   MOCK_CASES,
   MOCK_POSTS_NEWS,
   MOCK_POSTS_ARTICLES,
-  MOCK_CONFIG_MAP,
   MOCK_CONFIGS,
   MOCK_USER_LIKES
 } from "../../../test/example.data";
@@ -69,7 +68,7 @@ export class MockPageDataService implements PageDataService {
       cases: MOCK_CASES,
       newsPosts: MOCK_POSTS_NEWS,
       articlePosts: MOCK_POSTS_ARTICLES,
-      configs: MOCK_CONFIG_MAP
+      configs: MOCK_CONFIGS
     };
     console.info("mock home data invoked");
     return of(state);

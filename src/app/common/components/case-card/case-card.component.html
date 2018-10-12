@@ -1,16 +1,20 @@
 <mat-card *ngIf="case">
     <img mat-card-image [src]="case.coverImageUrl" />
     <mat-card-title>
-        <a [routerLink]="'/cases/' + case.id" class="news-title">{{case.title}}</a>
+        <div style="word-break: keep-all; overflow: hidden;">
+            <a [routerLink]="'/cases/' + case.id" class="case-title">{{case.title}}</a>
+        </div>
     </mat-card-title>
     <mat-card-content>{{case.summary}}</mat-card-content>
     <mat-card-footer>
-        <mat-chip-list class="" *ngIf="case.tags">
-            <mat-chip *ngFor="let tag of case.tags" [color]="'primary'">
+        <mat-chip-list *ngIf="case.tags" class="override-chip-list">
+            <mat-chip *ngFor="let tag of case.tags">
                 {{tag}}
             </mat-chip>
         </mat-chip-list>
     </mat-card-footer>
 </mat-card>
-
 <span *ngIf="!case">[ERR]case not defined</span>
+<!-- <p>
+    [TEST]
+</p> -->
