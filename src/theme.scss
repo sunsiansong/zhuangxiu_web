@@ -7,9 +7,15 @@ $color-warm: #FC4025;
 
 $color-cold: #008464;
 
+$color-addtional-info: rgba(0, 0, 0, .54);
+
 
 // size
 // 元素的尺寸、间距需要协调，确保理论上的和谐性和观感默契
 // header size
 // font size
 // padding margin
+
+/** 区块级别间隙参考 */
+$size-section-level-gap: 100px;
+$size-addtional-info: 12px;

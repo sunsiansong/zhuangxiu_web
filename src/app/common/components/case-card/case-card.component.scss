@@ -4,6 +4,7 @@ a.case-title {
 
 
 :host {
+    display: block;
     // 666
     // ref: https://blog.angular-university.io/angular-host-context/
     // but, ::ng-deep will be deprecated in the future, keep track

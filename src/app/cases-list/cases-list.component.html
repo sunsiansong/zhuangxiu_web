@@ -37,22 +37,44 @@
 
 
 
-  <br />
-
-  <mat-grid-list cols="3" [gutterSize]="8" [rowHeight]="'800px'">
-    <mat-grid-tile *ngFor="let t of data.tiles">
+<div [hidden]="true">
+  <mat-grid-list cols="3" [gutterSize]="8" [rowHeight]="'1800px'" >
+    <mat-grid-tile *ngFor="let t of tiles">
       <app-case-card [case]="case" *ngFor="let case of t"></app-case-card>
     </mat-grid-tile>
   </mat-grid-list>
 
+</div>
+
+<section class="card-container clearfix" #colContainer>
+  <div *ngFor="let col of tiles;index as i" class="card-col" [style.width]="colWidth" [id]="'col-' + i">
+      <app-case-card [case]="case" *ngFor="let case of col"></app-case-card>
+  </div>
+</section>
+<!-- 
   <mat-paginator [length]="data.page.length" [pageSize]="data.page.pageSize" [pageSizeOptions]="[10, 20, 50, 100]"
     (page)="pageChange($event)">
-  </mat-paginator>
-  <p style="text-align: right;">
-    已载入[45]条，每次载入[15]条，剩余[120]条 「TODO」
+  </mat-paginator> -->
+  
+  <div [style.textAlign]="'center'" class="load-more">
+      <label>
+        已载入[45]条，每次载入
+        <mat-form-field>
+            <mat-select>
+              <mat-option [value]="10">10</mat-option>
+              <mat-option [value]="20">20</mat-option>
+              <mat-option [value]="30">30</mat-option>
+            </mat-select>
+          </mat-form-field>
+        条，剩余[120]条 「TODO」</label>
+      <button mat-fab color="accent" (click)="loadMoreData()">更多</button>
+    </div>
+</div>
+
+<div class="debug-area">
+  <h4>async test</h4>
+  <p>
+    {{asyncTest | async | json}}
   </p>
 
-  <div [style.textAlign]="'center'">
-      <button mat-fab color="accent">更多</button>
-    </div>
 </div>

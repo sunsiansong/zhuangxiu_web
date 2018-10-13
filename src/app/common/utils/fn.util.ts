@@ -12,12 +12,36 @@ export class Fn {
     const numPerColumn = contents.length / cols;
 
     const tiles = [];
-    contents.forEach((val) => {
-      if (tiles.length === 0 || tiles[tiles.length - 1].length >= numPerColumn) { // 当前列不存在或者当列已满
-        tiles.push([]);˝
+    contents.forEach(val => {
+      if (
+        tiles.length === 0 ||
+        tiles[tiles.length - 1].length >= numPerColumn
+      ) {
+        // 当前列不存在或者当列已满
+        tiles.push([]);
       }
       tiles[tiles.length - 1].push(val);
     });
     return tiles;
+  }
+
+  /**
+   * 计算 html 子元素的高度和
+   * @param ele html元素
+   */
+  static calcElementChildrenHeight(ele: Element): number {
+    let sum = 0;
+    for (let i = 0; i < ele.children.length; i++) {
+      sum += ele.children.item(i).clientHeight;
+    }
+    return sum;
+    // return new Array(ele.children.length)
+    //   .fill(null)
+    //   .map((_, i) => {
+    //     return ele.children.item(i).clientHeight;
+    //   })
+    //   .reduce((pre, curr) => {
+    //     return pre + curr;
+    //   }, 0);
   }
 }

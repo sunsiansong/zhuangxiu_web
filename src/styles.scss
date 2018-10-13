@@ -6,3 +6,23 @@
 .clearfix {
     clear: both;
 }
+
+.txt-align-right {
+    text-align: right;
+}
+
+.debug-area {
+    background-color: lightgray;
+    border: 2px dotted red;
+    margin: 50px 0;
+    padding: 1em 0;
+}
+.debug-area::before {
+    content: '高能：这里是调试区域';
+    display: block;
+    top: -2em;
+    color: lightcoral;
+    font-size: 1.5em;
+    border-bottom: 1px dotted gray;
+    background-color: white;
+}

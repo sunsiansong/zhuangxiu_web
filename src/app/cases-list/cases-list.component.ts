@@ -1,5 +1,12 @@
-import { Component, OnInit, Inject } from "@angular/core";
-import { Observable, Observer } from "rxjs";
+import {
+  Component,
+  OnInit,
+  Inject,
+  ViewChild,
+  ElementRef
+} from "@angular/core";
+import { Observable, Observer, of, from, interval } from "rxjs";
+import { delay, map, take } from "rxjs/operators";
 
 import { SortDirection, PageEvent } from "@angular/material";
 
@@ -22,16 +29,23 @@ export interface CasesCompState {
 
 export interface CasesCompData {
   page?: PageData<Case>;
-  tiles?: Case[][];
+  // tiles?: Case[][];
   now?: Date;
 }
 
+/**
+ * 瀑布流设想：
+ *  有n列数据，数据逐条放入当前最短的列
+ */
 @Component({
   selector: "app-cases-list",
   templateUrl: "./cases-list.component.html",
   styleUrls: ["./cases-list.component.scss"]
 })
 export class CasesListComponent implements OnInit {
+  @ViewChild("colContainer")
+  colContainer: ElementRef;
+
   asyncStyles: Observable<ExampleTab[]>;
   state: CasesCompState = {
     sort: "default",
@@ -39,11 +53,11 @@ export class CasesListComponent implements OnInit {
   };
 
   data: CasesCompData;
-  // MatPaginator Output
-  pageEvent: PageEvent;
+  pageEvent: PageEvent; // MatPaginator Output
 
-  tileCols = 3;
+  cols = 3;
   tiles: Case[][];
+  asyncTest = interval(1000).pipe(map(x => x + "TEXT"));
 
   pageChange(e: PageEvent) {
     console.log("pageChange", e);
@@ -65,21 +79,62 @@ export class CasesListComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.loadMoreData();
+  }
+
+  sortChange(e: any) {
+    console.log("sort change", e);
+  }
+
+  loadMoreData() {
     this.pageDataService.casesListData().subscribe(
       res => {
         this.data = res;
-        this.data.tiles = Fn.calcTile(3, this.data.page.datas);
+        // this.data.tiles = Fn.calcTile(3, this.data.page.datas);
+
+        if (!this.tiles) {
+          this.tiles = Fn.calcTile(3, this.data.page.datas);
+        } else {
+          // 1 2 3 4
+          // 400 > 200 > 100 > 0
+          interval(200)
+            .pipe(
+              // map(x => x / 2 >= 100 ? x / 2 : 0)
+              map(x => res.page.datas[x]),
+              take(res.page.datas.length)
+            )
+          // from(res.page.datas)
+            .subscribe(x => {
+              const ele: HTMLElement = this.colContainer.nativeElement;
+              const appendColIndex = new Array(ele.children.length)
+                .fill(null)
+                .map((_, index) => {
+                  return {
+                    node: ele.children.item(index),
+                    index
+                  };
+                })
+                .reduce((pre, curr) => {
+                  return Fn.calcElementChildrenHeight(pre.node) >
+                    Fn.calcElementChildrenHeight(curr.node)
+                    ? curr
+                    : pre;
+                }).index;
+
+              this.tiles[appendColIndex].push(x);
+            });
+        }
       },
       err => {
         alert("failed to fetch casesListData");
       },
       () => {
-        // console.log("fetch cases list data done");
+        console.log("fetch cases list data done");
       }
     );
   }
 
-  sortChange(e: any) {
-    console.log("sort change", e);
+  get colWidth() {
+    return 100 / this.tiles.length + "%";
   }
 }
