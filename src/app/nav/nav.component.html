@@ -1,16 +1,23 @@
 <nav class="topnav">
-    <ul>
-        <li><a routerLink="/index" routerLinkActive="active">首页</a></li>
-        <li><a routerLink="/cases" routerLinkActive="active">设计稿</a></li>
-        <li><a routerLink="/posts" routerLinkActive="active">新闻|文章</a></li>
-        <li><a routerLink="/leave-words" routerLinkActive="active">留言|回复</a></li>
-        <li><a routerLink="/about" routerLinkActive="active">关于我们</a></li>
+    <div class="logo-area">
+        <img src="./assets/images/toyota_logo.svg" />
+        <!-- <img src="./assets/images/logo.png" /> -->
+        <!-- <img src="./assets/images/benz_logo.jpg" /> -->
+    </div>
+    <div class="nav-bar">
+        <ul id="G_NAV_BAR">
+            <li><a routerLink="/index" routerLinkActive="active">首页</a></li>
+            <li><a routerLink="/cases" routerLinkActive="active">设计稿</a></li>
+            <li><a routerLink="/posts" routerLinkActive="active">新闻|文章</a></li>
+            <li><a routerLink="/leave-words" routerLinkActive="active">留言|回复</a></li>
+            <li><a routerLink="/about" routerLinkActive="active">关于我们</a></li>
 
-        <!-- <li><a routerLink="/lazy" routerLinkActive="active">Lazy</a></li>
+            <!-- <li><a routerLink="/lazy" routerLinkActive="active">Lazy</a></li>
         <li><a routerLink="/lazy/nested" routerLinkActive="active">Lazy_Nested</a></li> -->
 
-        <li class="like"><a routerLink="/likes" routerLinkActive="active">
-                <mat-icon>favorite_border</mat-icon>
-            </a></li>
-    </ul>
+            <li class="like"><a routerLink="/likes" routerLinkActive="active">
+                    <mat-icon>favorite_border</mat-icon>
+                </a></li>
+        </ul>
+    </div>
 </nav>

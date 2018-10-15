@@ -1,5 +1,11 @@
 @import '../../theme.scss';
 
+:host {
+    background-color: white;
+    display: block;
+    pointer-events: auto;
+}
 footer {
-    margin-top: $size-section-level-gap;
+    // margin-top: $size-section-level-gap;
+    box-shadow: $shaddow-main-component;
 }

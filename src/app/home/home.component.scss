@@ -1,0 +1,18 @@
+app-pc-trans-gutter.row{
+    height: 43px;
+    width: 100%;
+}
+
+section.home-posts-area {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  app-pc-trans-gutter {
+      width: 30px;
+  }
+
+  .col {
+      width: 50%;
+  }
+}

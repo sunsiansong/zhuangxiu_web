@@ -1,12 +1,17 @@
-<app-home-banner [slogan]="state.configs.slogan.val" [bgImgSrc]="state.configs.homeBannerBgImgSrc.val"></app-home-banner>
-<app-home-cases [cases]="state.cases"></app-home-cases>
-<mat-grid-list [cols]="2">
-    <mat-grid-tile>
-        <app-home-news [news]="state.newsPosts" [now]="state.now"></app-home-news>
-    </mat-grid-tile>
-    
-    <mat-grid-tile>
-        <app-home-articles [articles]="state.articlePosts"></app-home-articles>
-    </mat-grid-tile>
-</mat-grid-list>
 
+<app-pc-trans-gutter class="row"></app-pc-trans-gutter>
+<app-home-banner 
+    [slogan]="state.configs.slogan.val" 
+    [bgImgSrc]="state.configs.homeBannerBgImgSrc.val"
+    appOverAndActive></app-home-banner>
+<app-pc-trans-gutter class="row"></app-pc-trans-gutter>
+<app-home-cases 
+    [cases]="state.cases"
+    appOverAndActive></app-home-cases>
+<app-pc-trans-gutter class="row"></app-pc-trans-gutter>
+
+<section class="home-posts-area">
+        <app-home-news appOverAndActive class="col" [news]="state.newsPosts" [now]="state.now"></app-home-news>
+        <app-pc-trans-gutter class="gutter"></app-pc-trans-gutter>
+        <app-home-articles appOverAndActive class="col" [articles]="state.articlePosts"></app-home-articles>
+</section>

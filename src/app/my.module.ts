@@ -27,14 +27,16 @@ import { LikesPageComponent } from "./likes-page/likes-page.component";
 import { MaterialModule } from "./material.module";
 import { AppRoutingModule } from "./app-routing.module";
 import { HomeArticlesComponent } from "./home/home-articles/home-articles.component";
-import { ChannelPostsComponent } from './posts-list/channel-posts/channel-posts.component';
-import { LeaveWordsComponent } from './leave-words/leave-words.component';
+import { ChannelPostsComponent } from "./posts-list/channel-posts/channel-posts.component";
+import { LeaveWordsComponent } from "./leave-words/leave-words.component";
 import { DATA_SERVICE } from "./const.instance";
+import { TransparentGutterComponent } from "./common/components/transparent-gutter.component";
+import { UiCenterService } from "./common/service/ui-center.service";
+import { OverAndActiveDirective } from './common/directives/over-and-active.directive';
 
 const basicServiceProviders: Provider[] = [
   { provide: MatPaginatorIntl, useClass: MatPaginatorIntlService }
 ];
-
 
 const optionalServiceProviders = environment.mockService
   ? [{ provide: DATA_SERVICE, useClass: MockPageDataService }]
@@ -63,9 +65,15 @@ const optionalServiceProviders = environment.mockService
     PostDetailComponent,
     LikesPageComponent,
     ChannelPostsComponent,
-    LeaveWordsComponent
+    LeaveWordsComponent,
+    TransparentGutterComponent,
+    OverAndActiveDirective
   ],
   exports: [MaterialModule],
-  providers: [...basicServiceProviders, ...optionalServiceProviders]
+  providers: [
+    ...basicServiceProviders,
+    ...optionalServiceProviders,
+    UiCenterService
+  ]
 })
 export class MyModule {}

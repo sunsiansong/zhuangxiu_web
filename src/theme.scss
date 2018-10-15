@@ -1,8 +1,22 @@
+@import 'styles';
+
+// 层级
+// backdrop background layer: z-index -1
+// backdrop front layer(main): z-index 100~199
+// actions above main: z-index 200 ~ 209
+// important elements above main: 210 ~ 299
+// 
+
 // fonts
 
+$shaddow-main-component: 0 0 8px lightgray;
 
 // colors
-
+$color-debug: red;
+$color-pri-bg: orangered;
+// $color-pri-bg: map-get($app-primary,  800); // 主要的背景色
+$color-pri-front: black;
+$color-pri-front-active: gray;
 $color-warm: #FC4025;
 
 $color-cold: #008464;
@@ -16,6 +30,9 @@ $color-addtional-info: rgba(0, 0, 0, .54);
 // font size
 // padding margin
 
+$size-pc-max-width: 1020px;
+
 /** 区块级别间隙参考 */
 $size-section-level-gap: 100px;
 $size-addtional-info: 12px;
+$size-nav-height: 43px;

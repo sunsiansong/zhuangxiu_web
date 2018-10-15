@@ -1,0 +1,8 @@
+@import '../../../theme.scss';
+
+:host {
+  display: block;
+  box-shadow: $shaddow-main-component;
+  background-color: white;
+  pointer-events: auto;
+}

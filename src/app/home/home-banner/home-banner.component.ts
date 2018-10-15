@@ -1,4 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ElementRef, OnChanges, SimpleChanges } from '@angular/core';
+import { UiCenterService } from '../../common/service/ui-center.service';
 
 @Component({
   selector: 'app-home-banner',
@@ -7,16 +8,19 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class HomeBannerComponent implements OnInit {
 
-
   @Input()
   slogan: string;
   @Input()
   bgImgSrc: string;
 
-  constructor() { }
+  constructor(
+    uiCenter: UiCenterService,
+  ) {
+  }
 
   ngOnInit() {
   }
+
 
   get bgImgUrl() {
     return `url(${this.bgImgSrc})`;

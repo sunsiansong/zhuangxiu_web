@@ -1,6 +1,18 @@
+@import '../../../theme.scss';
+
 :host {
-    ::ng-deep .mat-figure {
-        flex-direction: column;
-        justify-content: flex-start;
-    }
+  display: block;
+  box-shadow: $shaddow-main-component;
+  pointer-events: auto;
+  background-color: white;
+
+  h3 {
+    margin: 0;
+    padding: 20px 0;
+  }
+
+  ::ng-deep .mat-figure {
+    flex-direction: column;
+    justify-content: flex-start;
+  }
 }
