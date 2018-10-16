@@ -1,12 +1,12 @@
 <!-- TODO 开发时，经常想关掉它，说明在视觉体验上不是理想的，尝试构思和调整设计，使得整体协调 -->
 
 <section [hidden]="false">
-  <h4>取得联系</h4>
+  <h3>取得联系</h3>
 
   <mat-grid-list cols="2">
       <mat-grid-tile>
         <div class="contact-infos">
-            <label>1.主动联系我们</label>
+            <h4><strong>您可以通过以下渠道和我们取得联系：</strong></h4>
             <br />
             公司地址： {{configs!.address!.val}} 【TODO 增加地图和导航】
             <br/>
@@ -20,15 +20,16 @@
       </mat-grid-tile>
       <mat-grid-tile>
         <form class="contact-form">
-            <label>2.留下联系方式，我们将和你取得联系</label>
+            <!-- <label>2.留下联系方式，我们将和你取得联系</label> -->
+            <h4><strong>或者让{{configs!.sitename.val}}联系您：</strong></h4>
 
             <label class="form-label">意图：</label>
-            <mat-radio-group [(ngModel)]="info.intentionType" name="intentionType">
+            <mat-radio-group [(ngModel)]="info.intentionType" name="intentionType" class="field-end">
               <mat-radio-button *ngFor="let e of preset.INTENTION_TYPES" [value]="e">{{e}}</mat-radio-button>
             </mat-radio-group>
         
             <label class="form-label">联系方式</label>
-            <mat-radio-group [(ngModel)]="info.channelType" name="channelType">
+            <mat-radio-group [(ngModel)]="info.channelType" name="channelType" class="field-end">
               <mat-radio-button *ngFor="let e of preset.CONTACT_CHANNELS" [value]="e">{{e}}</mat-radio-button>
             </mat-radio-group>
             <mat-form-field>
@@ -36,7 +37,7 @@
             </mat-form-field>
         
             <mat-form-field>
-              <textarea matInput placeholder="说明" rows="3"></textarea>
+              <textarea matInput [placeholder]="descriptionPlaceholder" rows="3"></textarea>
             </mat-form-field>
         
             <!-- <mat-form-field>

@@ -13,9 +13,7 @@ export class HomeBannerComponent implements OnInit {
   @Input()
   bgImgSrc: string;
 
-  constructor(
-    uiCenter: UiCenterService,
-  ) {
+  constructor( ) {
   }
 
   ngOnInit() {

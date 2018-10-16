@@ -14,7 +14,7 @@ import { filter } from "rxjs/operators";
     `
       :host {
         display: block;
-        // background-color: rgba(100, 0, 100, 0.2);
+        background-color: rgba(255, 255, 255, 0.7);
       }
     `
   ]

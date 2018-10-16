@@ -30,13 +30,6 @@ $app-theme: mat-light-theme($app-primary, $app-accent, $app-warn);
 
 
 // basic styles
-app-* {
-    display: block;
-}
-body {
-    margin: 0;
-}
-
 .clearfix {
     clear: both;
 }

@@ -1,8 +1,11 @@
 <section>
-    <h3>精选设计</h3>
+    <h2>精选设计</h2>
     <mat-grid-list [cols]="tileCols" [gutterSize]="12" [rowHeight]="'800px'">
-        <mat-grid-tile *ngFor="let t of tiles">
+        <mat-grid-tile *ngFor="let t of tiles" class="case-card-col">
                 <app-case-card [case]="case" *ngFor="let case of t"></app-case-card>
         </mat-grid-tile>
     </mat-grid-list>
+    <div class="txt-align-right">
+        <a [routerLink]="[ '/cases']">more</a>
+    </div>
 </section>

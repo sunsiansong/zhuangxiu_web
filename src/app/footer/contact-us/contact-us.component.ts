@@ -65,4 +65,8 @@ export class ContactUsComponent implements OnInit {
       duration: 3000
     });
   }
+
+  get descriptionPlaceholder() {
+    return '您要装修房子吗？想要什么样的风格，大概什么户型，有任何想法请告诉我们';
+  }
 }

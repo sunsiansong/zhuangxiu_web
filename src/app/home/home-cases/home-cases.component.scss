@@ -6,13 +6,12 @@
   pointer-events: auto;
   background-color: white;
 
-  h3 {
-    margin: 0;
-    padding: 20px 0;
-  }
-
   ::ng-deep .mat-figure {
     flex-direction: column;
     justify-content: flex-start;
   }
+}
+
+.case-card-col app-case-card {
+  margin-bottom: $size-gutter-small-card;
 }

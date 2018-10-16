@@ -16,10 +16,10 @@ $color-debug: red;
 $color-pri-bg: orangered;
 // $color-pri-bg: map-get($app-primary,  800); // 主要的背景色
 $color-pri-front: black;
-$color-pri-front-active: gray;
-$color-warm: #FC4025;
+$color-pri-front-active: #FC4025;
+$color-warm: #453EB2;
 
-$color-cold: #008464;
+$color-cold: #FFF43E;
 
 $color-addtional-info: rgba(0, 0, 0, .54);
 
@@ -36,3 +36,25 @@ $size-pc-max-width: 1020px;
 $size-section-level-gap: 100px;
 $size-addtional-info: 12px;
 $size-nav-height: 43px;
+
+$size-gutter-small-card: 12px;
+
+
+// 页面仅有一个标题、详情页标题使用 h1
+
+// 页面内块级标题使用h2
+
+// 嵌套的heading使用级别不应该超过外层heading
+/**
+eg:
+<section>
+    <h2>subtitle</h2>
+    <div>
+        <h1>内部的heading</h1>        <<=============  这用组织结构不合理
+        <h4>内部的heading</h4>        <<=============  这用组织结构不合理
+        <some-title></some-title>    <<=============  推荐的方式
+    </div>
+
+</section>
+
+*/

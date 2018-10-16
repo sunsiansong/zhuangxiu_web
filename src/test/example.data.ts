@@ -145,6 +145,10 @@ export const MOCK_POSTS_ARTICLES: Post[] = [
 
 
 export const MOCK_CONFIGS: {[key: string]: Config} = {
+    sitename: {
+        key: 'sitename',
+        val: '【AnguRar设计】'
+    },
     slogan: {
         key: 'slogan',
         val: `“装饰的灵魂是设计，

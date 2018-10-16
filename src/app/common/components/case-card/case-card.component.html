@@ -1,6 +1,8 @@
-<mat-card *ngIf="case">
+<mat-card *ngIf="case" [ngClass]="'elvt-' + elevation">
     <img mat-card-image [src]="case.coverImageUrl" />
     <mat-card-title>
+            <!-- {{case.title}} -->
+            <!-- <h4>{{case.title}}</h4> -->
             <a [routerLink]="'/cases/' + case.id" class="case-title">{{case.title}}</a>
     </mat-card-title>
     <mat-card-content>{{case.summary}}</mat-card-content>

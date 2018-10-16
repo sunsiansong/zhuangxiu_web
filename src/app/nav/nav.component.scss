@@ -6,21 +6,15 @@ nav.topnav {
         margin: 0 auto;
         max-width: $size-pc-max-width;
         text-align: center;
-        // position: fixed;
-        width: 100%;
-        // z-index: -1;
-
         img {
             width: 500px;
         }
     }
 
     div.nav-bar{
-        background-color: $color-pri-bg;
+        // background-color: $color-pri-bg;
+        background-color: $color-cold;
         width: 100%;
-        // z-index: -1;
-        // position: fixed;
-        // top: 150px;
 
         ul {
             margin: 0 auto;
@@ -33,7 +27,7 @@ nav.topnav {
                 text-align: center;
     
                 a {
-                    color: $color-pri-front;
+                    color: $color-warm;
                     display: block;
                     padding: 6px 12px;
                     text-decoration: none;

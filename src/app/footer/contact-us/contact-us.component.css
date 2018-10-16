@@ -17,6 +17,14 @@ div.contact-infos {
 
 label.form-label {
     color: rgba(0,0,0,.54);
-    font-size: 16px;
+    font-size: 13px;
     text-align: left;
+    margin-bottom: .5em;
 }   
+
+.field-end {
+    margin-bottom: 1.25em;
+}
+
+
+/* TODO radio 的间隔和分组不太合理，勾选圈应该更靠近文本，各radio保持合适的距离 */

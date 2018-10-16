@@ -1,5 +1,7 @@
 a.case-title {
+    // TODO 链接的样式需要统一，另外考虑在新窗口打开的样式
     text-decoration: none;
+    font-size: 1.3rem;
 }
 
 
@@ -11,5 +13,8 @@ a.case-title {
     ::ng-deep .mat-chip-list-wrapper {
         justify-content: flex-end;
     }
+}
 
+mat-card.elvt-2 {
+    box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2)
 }
