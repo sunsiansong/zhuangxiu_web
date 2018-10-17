@@ -3,62 +3,74 @@
 <section [hidden]="false">
   <h3>取得联系</h3>
 
-  <mat-grid-list cols="2">
-      <mat-grid-tile>
-        <div class="contact-infos">
-            <h4><strong>您可以通过以下渠道和我们取得联系：</strong></h4>
-            <br />
-            公司地址： {{configs!.address!.val}} 【TODO 增加地图和导航】
-            <br/>
-            电话：{{configs!.contact!.val}}
-            <br/>
-            微信。。。
-            <br/>
-            <button mat-flat-button (click)="copyContactInfo()" color="accent">复制这些信息</button>
-
+  <mat-grid-list cols="2" [rowHeight]="'600px'">
+    <mat-grid-tile>
+      <div class="contact-infos">
+        <h4><strong>您可以通过以下渠道和我们取得联系：</strong></h4>
+        <div class="label-info">
+          <label> 公司地址：</label>
+          <div class="info">{{configs!.address!.val}}</div>
+          <div class="info" id="addressAmap"> </div>
+        </div>
+        <div class="label-info">
+          <label>电话：</label>
+          <div class="info">
+            {{configs!.contact!.val}}
           </div>
-      </mat-grid-tile>
-      <mat-grid-tile>
-        <form class="contact-form">
-            <!-- <label>2.留下联系方式，我们将和你取得联系</label> -->
-            <h4><strong>或者让{{configs!.sitename.val}}联系您：</strong></h4>
+        </div>
+        <div class="label-info">
+          <label>关注我们的微信公众号：</label>
+          <div class="info">
+            <img alt="我是一个二维码，但是你看不见我「TODO」img url" src="//via.placeholder.com/200x200" />
+          </div>
+        </div>
+        <div class="txt-align-right">
+          <button mat-flat-button (click)="copyContactInfo()" color="accent">复制这些联系方式</button>
+        </div>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <form class="contact-form">
+        <!-- <label>2.留下联系方式，我们将和你取得联系</label> -->
+        <h4><strong>或者留下联系方式让{{configs!.sitename.val}}联系您：</strong></h4>
 
-            <label class="form-label">意图：</label>
-            <mat-radio-group [(ngModel)]="info.intentionType" name="intentionType" class="field-end">
-              <mat-radio-button *ngFor="let e of preset.INTENTION_TYPES" [value]="e">{{e}}</mat-radio-button>
-            </mat-radio-group>
-        
-            <label class="form-label">联系方式</label>
-            <mat-radio-group [(ngModel)]="info.channelType" name="channelType" class="field-end">
-              <mat-radio-button *ngFor="let e of preset.CONTACT_CHANNELS" [value]="e">{{e}}</mat-radio-button>
-            </mat-radio-group>
-            <mat-form-field>
-              <input matInput [placeholder]="info.channelType" [(ngModel)]="info.channelVal" name="channelVal">
-            </mat-form-field>
-        
-            <mat-form-field>
-              <textarea matInput [placeholder]="descriptionPlaceholder" rows="3"></textarea>
-            </mat-form-field>
-        
-            <!-- <mat-form-field>
+        <label class="form-label">意图：</label>
+        <mat-radio-group [(ngModel)]="info.intentionType" name="intentionType" class="field-end">
+          <mat-radio-button *ngFor="let e of preset.INTENTION_TYPES" [value]="e">{{e}}</mat-radio-button>
+        </mat-radio-group>
+
+        <label class="form-label">联系方式</label>
+        <mat-radio-group [(ngModel)]="info.channelType" name="channelType" class="field-end">
+          <mat-radio-button *ngFor="let e of preset.CONTACT_CHANNELS" [value]="e">{{e}}</mat-radio-button>
+        </mat-radio-group>
+        <mat-form-field>
+          <input matInput [placeholder]="info.channelType" [(ngModel)]="info.channelVal" name="channelVal">
+        </mat-form-field>
+
+        <mat-form-field>
+          <textarea matInput [placeholder]="descriptionPlaceholder" rows="3"></textarea>
+        </mat-form-field>
+
+        <!-- <mat-form-field>
               <mat-select placeholder="联系时间">
                 <mat-option [value]="e" *ngFor="let e of preset.CONTACT_TIME">{{e}}</mat-option>
               </mat-select>
             </mat-form-field> -->
-        
-        
-            <mat-form-field class="example-full-width">
-              <input type="text" placeholder="联系时间" aria-label="text" matInput [(ngModel)]="info.contactTime" name="contactTime" [matAutocomplete]="auto">
-              <mat-autocomplete #auto="matAutocomplete">
-                <mat-option *ngFor="let option of preset.CONTACT_TIME" [value]="option">
-                  {{option}}
-                </mat-option>
-              </mat-autocomplete>
-            </mat-form-field>
-        
-            <button mat-flat-button color="primary">提交联系信息</button>
-          </form>
-      </mat-grid-tile>
-    </mat-grid-list>
+
+
+        <mat-form-field class="example-full-width">
+          <input type="text" placeholder="联系时间" aria-label="text" matInput [(ngModel)]="info.contactTime" name="contactTime"
+            [matAutocomplete]="auto">
+          <mat-autocomplete #auto="matAutocomplete">
+            <mat-option *ngFor="let option of preset.CONTACT_TIME" [value]="option">
+              {{option}}
+            </mat-option>
+          </mat-autocomplete>
+        </mat-form-field>
+
+        <button mat-flat-button color="primary" (click)="submitContactInfo()">提交联系信息</button>
+      </form>
+    </mat-grid-tile>
+  </mat-grid-list>
 
 </section>

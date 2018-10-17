@@ -1,6 +1,6 @@
 import { PageDataService } from "../page-data.service";
 import { HomeState } from "../../home/home.component";
-import { Observable, of } from "rxjs";
+import { Observable, of, throwError } from "rxjs";
 import {
   MOCK_CASES,
   MOCK_POSTS_NEWS,
@@ -13,8 +13,17 @@ import { Injectable } from "@angular/core";
 import { PostsPageData } from "../../posts-list/posts-list.component";
 import { Config } from "../../common/model/config.model";
 import { UserLike } from "../../common/model/like.model";
+import { ContactInfo } from "../../footer/contact-us/contact-us.component";
 
 export class MockPageDataService implements PageDataService {
+  submitContactInfo(info: ContactInfo): Observable<any> {
+    const t = new Date;
+    if (t.getSeconds() % 4 > 1) {
+      return throwError('模拟下网络异常');
+    } else {
+      return of('ok');
+    }
+  }
 
   configs(): Observable<{ [key: string]: Config; }> {
     return of(MOCK_CONFIGS);

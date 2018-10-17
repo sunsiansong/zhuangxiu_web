@@ -14,23 +14,57 @@
     /*  reset css, 需要说明 angular.json 中已经引入了normalize.css ,考虑到整体的设计思想，仍然做一些reset */
 
     /* heading 的 margin 调整到padding */
-    body h1, h2, h3, h4, h5, h6 {
+    body h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
       margin: 0;
-      font-weight: 200; /** TODO 需要确认字体的支持程度，以及在不同浏览器平台下的显示效果 */
+      font-weight: 200;
+      /** TODO 需要确认字体的支持程度，以及在不同浏览器平台下的显示效果 */
     }
-    h1 {padding: .67em 0;}
-    h2 { padding: .83em 0; }
-    h3 { padding: 1em 0; } 
-    h4 { padding: 1.33em 0; }
-    h5 { padding: 1.67em 0; }
-    h6 { padding: 2.33em 0; }
 
+    h1 {
+      padding: .67em 0;
+    }
+
+    h2 {
+      padding: .83em 0;
+    }
+
+    h3 {
+      padding: 1em 0;
+    }
+
+    h4 {
+      padding: 1.33em 0;
+    }
+
+    h5 {
+      padding: 1.67em 0;
+    }
+
+    h6 {
+      padding: 2.33em 0;
+    }
   </style>
+
+  <!-- TODO 改为异步加载方式, 或者直接使用 https://github.com/xieziyu/ngx-amap -->
+  <script type="text/javascript" src="//webapi.amap.com/maps?v=1.4.10&key=04ceb66c41010fd51fcd8c1784efc234"></script>
 
 </head>
 
 <body>
   <app-root></app-root>
+  <!-- <div id="debugAmap" style="height: 600px;"></div>
+  <script type="text/javascript">
+    const map = new AMap.Map("debugAmap", {
+      zoom: 11, // 级别
+      center: [116.397428, 39.90923], // 中心点坐标
+      viewMode: "3D" // 使用3D视图
+    });
+  </script> -->
 </body>
 
 </html>

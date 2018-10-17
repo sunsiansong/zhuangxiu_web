@@ -2,8 +2,9 @@ import { FormsModule } from "@angular/forms"; // <-- NgModel lives here
 import { NgModule, Provider, InjectionToken } from "@angular/core";
 import { MatPaginatorIntl } from "@angular/material";
 
+import { ClipboardModule } from 'ngx-clipboard';
+
 import { MatPaginatorIntlService } from "./service/mat-paginator-intl.impl.service";
-import { PageDataService } from "./service/page-data.service";
 import { environment } from "../environments/environment";
 import { MockPageDataService } from "./service/__mock__/page-data.service.mock";
 import { PageDataImplServie } from "./service/impl/page-data.impl.service";
@@ -32,7 +33,7 @@ import { LeaveWordsComponent } from "./leave-words/leave-words.component";
 import { DATA_SERVICE } from "./const.instance";
 import { TransparentGutterComponent } from "./common/components/transparent-gutter.component";
 import { UiCenterService } from "./common/service/ui-center.service";
-import { OverAndActiveDirective } from './common/directives/over-and-active.directive';
+import { OverAndActiveDirective } from "./common/directives/over-and-active.directive";
 
 const basicServiceProviders: Provider[] = [
   { provide: MatPaginatorIntl, useClass: MatPaginatorIntlService }
@@ -43,7 +44,13 @@ const optionalServiceProviders = environment.mockService
   : [{ provide: DATA_SERVICE, useClass: PageDataImplServie }];
 
 @NgModule({
-  imports: [CommonModule, FormsModule, MaterialModule, AppRoutingModule],
+  imports: [
+    CommonModule,
+    FormsModule,
+    MaterialModule,
+    AppRoutingModule,
+    ClipboardModule
+  ],
   declarations: [
     // pipes
     ReadableDatePipe,

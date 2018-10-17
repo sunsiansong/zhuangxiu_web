@@ -6,8 +6,12 @@ import { PostsPageData } from "../../posts-list/posts-list.component";
 import { Injectable } from "@angular/core";
 import { Config } from "../../common/model/config.model";
 import { UserLike } from "../../common/model/like.model";
+import { ContactInfo } from "../../footer/contact-us/contact-us.component";
 
 export class PageDataImplServie implements PageDataService {
+  submitContactInfo(info: ContactInfo): Observable<any> {
+    throw new Error("Method not implemented.");
+  }
   aboutPageData(): Observable<any> {
     throw new Error("Method not implemented.");
   }

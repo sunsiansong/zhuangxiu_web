@@ -1,0 +1,43 @@
+@import "../../../theme.scss";
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  text-align: left;
+}
+
+div.contact-infos {
+  text-align: left;
+  width: 100%;
+}
+
+label.form-label {
+  @extend .info-label;
+}
+
+.field-end {
+  margin-bottom: 1.25em;
+}
+
+#addressAmap {
+  width: 100%;
+  height: 200px;
+}
+
+.label-info label {
+  @extend .info-label;
+}
+.label-info .info {
+    padding-left: 20px;
+
+    img {
+        width: 200px;
+        height: 200px;
+        color: lightcoral;
+        text-align: center;
+        line-height: 1.5em;
+    }
+}
+
+/* TODO radio 的间隔和分组不太合理，勾选圈应该更靠近文本，各radio保持合适的距离 */

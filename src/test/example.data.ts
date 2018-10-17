@@ -145,6 +145,11 @@ export const MOCK_POSTS_ARTICLES: Post[] = [
 
 
 export const MOCK_CONFIGS: {[key: string]: Config} = {
+    addressGeo: { // TODO 考虑下地图名片直接用
+        key: 'addressGeo',
+        val: '102.659744,24.95895',
+        description: '公司坐标（高德地图配置），经纬度用,分隔'
+    },
     sitename: {
         key: 'sitename',
         val: '【AnguRar设计】'
@@ -168,6 +173,15 @@ export const MOCK_CONFIGS: {[key: string]: Config} = {
     jobs: {
         key: 'jobs',
         val: '招设计师，招施工监理，招CEO，招老板娘，招招招，什么都招'
+    },
+    weixin: {
+        key: 'weixin',
+        val: '一起学习用angular做网站吧（by sun)(顺便说下，这个是测试数据账号不存在的。。）'
+    },
+    contactTxt: {key: 'contactTxt', val: '顺便说下，我们公司周末不上班，麻烦不要打老板电话，老板还没有结婚，而且没有女朋友'},
+    publicTransport: {
+        key: 'publicTransport',
+        val: '乘11路到上面那个地方，地铁也行不过最后还是要坐11路公交，摩拜单车也行，小黄车不行，小黄车已经黄了'
     },
     address: {
         key: 'address',
