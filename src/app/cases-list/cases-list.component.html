@@ -1,80 +1,48 @@
-<!-- 基于Tab的过滤-->
-<!-- <div [hidden]="true">
+<section appOverAndActive>
+  <!-- 基于Radio的过滤 -->
+  <app-home-banner [bgImgSrc]="'/assets/images/bg.jpg'" [slogan]="''" appOverAndActive></app-home-banner>
+  <div [hidden]="false" *ngIf="data" appOverAndActive>
+    <section class="style-filter">
+      <mat-radio-group [(ngModel)]="state.style" name="style" [labelPosition]="'after'">
+        <mat-radio-button *ngFor="let e of asyncStyles | async" [value]="e">{{e.label}}</mat-radio-button>
+      </mat-radio-group>
+      <div style="text-align: right;">
+        <!-- <label>排序：</label> -->
+        <table matSort [matSortActive]="state.sort" [matSortDirection]="state.sortDirection" (matSortChange)="sortChange($event)"
+          style="float: right;">
+          <tr>
+            <th mat-sort-header="viewCount">浏览量</th>
+            <th mat-sort-header="createDate">发布时间</th>
+            <!-- <th mat-sort-header="default">default</th> -->
+          </tr>
+        </table>
+      </div>
 
-  <ng-container *ngIf="(asyncStyles | async) === null">
-    Loading tabs...
-  </ng-container>
-
-  <mat-tab-group>
-    <mat-tab *ngFor="let tab of asyncStyles | async">
-      <ng-template mat-tab-label>{{tab.label}}</ng-template>
-      {{tab.content}}
-    </mat-tab>
-  </mat-tab-group>
-</div> -->
-
-<!-- 基于Radio的过滤 -->
-<app-home-banner [bgImgSrc]="'/assets/images/bg.jpg'" [slogan]="''"></app-home-banner>
-<div [hidden]="false" *ngIf="data">
-  <section class="style-filter">
-    <mat-radio-group [(ngModel)]="state.style" name="style" [labelPosition]="'after'">
-      <mat-radio-button *ngFor="let e of asyncStyles | async" [value]="e">{{e.label}}</mat-radio-button>
-    </mat-radio-group>
-    <div style="text-align: right;">
-      <!-- <label>排序：</label> -->
-      <table matSort [matSortActive]="state.sort" [matSortDirection]="state.sortDirection" (matSortChange)="sortChange($event)"
-        style="float: right;">
-        <tr>
-          <th mat-sort-header="viewCount">浏览量</th>
-          <th mat-sort-header="createDate">发布时间</th>
-          <!-- <th mat-sort-header="default">default</th> -->
-        </tr>
-      </table>
-    </div>
-
-  </section>
+    </section>
 
 
-
-
-<div [hidden]="true">
-  <mat-grid-list cols="3" [gutterSize]="8" [rowHeight]="'1800px'" >
-    <mat-grid-tile *ngFor="let t of tiles">
-      <app-case-card [case]="case" *ngFor="let case of t"></app-case-card>
-    </mat-grid-tile>
-  </mat-grid-list>
-
-</div>
-
-<section class="card-container clearfix" #colContainer>
-  <div *ngFor="let col of tiles;index as i" class="card-col" [style.width]="colWidth" [id]="'col-' + i">
-      <app-case-card [case]="case" *ngFor="let case of col"></app-case-card>
-  </div>
-</section>
-<!-- 
+    <section class="card-container clearfix" #colContainer>
+      <div *ngFor="let col of tiles;index as i" class="card-col" [style.width]="colWidth" [id]="'col-' + i">
+        <app-case-card [case]="case" *ngFor="let case of col"></app-case-card>
+      </div>
+    </section>
+    <!-- 
   <mat-paginator [length]="data.page.length" [pageSize]="data.page.pageSize" [pageSizeOptions]="[10, 20, 50, 100]"
     (page)="pageChange($event)">
   </mat-paginator> -->
-  
-  <div [style.textAlign]="'center'" class="load-more">
+
+    <div [style.textAlign]="'center'" class="load-more">
       <label>
         已载入[45]条，每次载入
         <mat-form-field>
-            <mat-select>
-              <mat-option [value]="10">10</mat-option>
-              <mat-option [value]="20">20</mat-option>
-              <mat-option [value]="30">30</mat-option>
-            </mat-select>
-          </mat-form-field>
+          <mat-select>
+            <mat-option [value]="10">10</mat-option>
+            <mat-option [value]="20">20</mat-option>
+            <mat-option [value]="30">30</mat-option>
+          </mat-select>
+        </mat-form-field>
         条，剩余[120]条 「TODO」</label>
       <button mat-fab color="accent" (click)="loadMoreData()">更多</button>
     </div>
-</div>
-
-<div class="debug-area">
-  <h4>async test</h4>
-  <p>
-    {{asyncTest | async | json}}
-  </p>
-
-</div>
+  </div>
+</section>

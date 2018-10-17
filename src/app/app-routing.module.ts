@@ -9,6 +9,7 @@ import { PostDetailComponent } from "./post-detail/post-detail.component";
 import { LikesPageComponent } from "./likes-page/likes-page.component";
 import { HomeComponent } from "./home/home.component";
 import { LeaveWordsComponent } from "./leave-words/leave-words.component";
+import { TechSupportComponent } from "./tech-support/tech-support.component";
 
 const routes: Routes = [
   { path: '', redirectTo: 'index', pathMatch: 'full'},
@@ -22,7 +23,9 @@ const routes: Routes = [
 
   { path: "leave-words", component: LeaveWordsComponent },
   { path: "about", component: AboutPageComponent },
-  { path: "likes", component: LikesPageComponent }
+  { path: "likes", component: LikesPageComponent },
+
+  { path: "tech", component: TechSupportComponent}
 ];
 
 @NgModule({

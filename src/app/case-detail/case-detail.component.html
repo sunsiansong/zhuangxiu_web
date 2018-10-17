@@ -1,4 +1,11 @@
-<p>
-  case-detail works!
-  <summary>summary</summary>
-</p>
+<section *ngIf="case">
+  <h1>{{case.title}}</h1>
+  <summary>{{case.summary}}</summary>
+  <article [innerHTML]="case.detail">
+  </article>
+
+</section>
+
+<section *ngIf="!case">
+  <strong>DATA NOT READY</strong>
+</section>

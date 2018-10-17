@@ -1,6 +1,7 @@
 <app-nav></app-nav>
 <div id="main-wraper" [style.pointer-events]="mainAreaPointEvents">
     <main>
+        <app-pc-trans-gutter class="row-below-nav"></app-pc-trans-gutter>
         <router-outlet></router-outlet>
         <app-pc-trans-gutter></app-pc-trans-gutter>
         <app-footer appOverAndActive></app-footer>

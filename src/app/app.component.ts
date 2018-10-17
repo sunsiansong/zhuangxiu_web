@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { UiCenterService, UiEventType } from "./common/service/ui-center.service";
+// tslint:disable-next-line:import-blacklist
 import { filter } from "rxjs/operators";
 
 @Component({

@@ -8,7 +8,8 @@ import { Config } from "../../common/model/config.model";
 import { UserLike } from "../../common/model/like.model";
 import { ContactInfo } from "../../footer/contact-us/contact-us.component";
 
-export class PageDataImplServie implements PageDataService {
+export class PageDataImplServie  {
+// export class PageDataImplServie implements PageDataService {
   submitContactInfo(info: ContactInfo): Observable<any> {
     throw new Error("Method not implemented.");
   }

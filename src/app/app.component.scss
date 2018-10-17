@@ -11,8 +11,11 @@
 }
 
 main {
-    max-width: 1020px;
-    margin: 200px auto;
+    max-width: $size-pc-max-width;
+    margin: 140px auto;
+}
+app-pc-trans-gutter.row-below-nav{
+    height: 2 * $size-nav-height;
 }
 
 app-pc-trans-gutter {

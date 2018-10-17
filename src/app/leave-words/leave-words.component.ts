@@ -23,7 +23,7 @@ const COLORS: { bg: string; fg: string }[] = [
 @Component({
   selector: "app-leave-words",
   templateUrl: "./leave-words.component.html",
-  styleUrls: ["./leave-words.component.css"]
+  styleUrls: ["./leave-words.component.scss"]
 })
 export class LeaveWordsComponent implements OnInit {
   state: {

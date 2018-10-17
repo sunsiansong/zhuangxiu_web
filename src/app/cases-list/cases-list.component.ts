@@ -59,9 +59,6 @@ export class CasesListComponent implements OnInit {
   tiles: Case[][];
   asyncTest = interval(1000).pipe(map(x => x + "TEXT"));
 
-  pageChange(e: PageEvent) {
-    console.log("pageChange", e);
-  }
 
   constructor(@Inject(DATA_SERVICE) private pageDataService: PageDataService) {
     this.asyncStyles = Observable.create((observer: Observer<ExampleTab[]>) => {
@@ -80,6 +77,10 @@ export class CasesListComponent implements OnInit {
 
   ngOnInit() {
     this.loadMoreData();
+  }
+
+  pageChange(e: PageEvent) {
+    console.log("pageChange", e);
   }
 
   sortChange(e: any) {

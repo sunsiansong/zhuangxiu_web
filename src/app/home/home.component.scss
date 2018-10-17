@@ -1,5 +1,11 @@
+@import '../../theme.scss';
+
+:host {
+    display: block;
+}
+
 app-pc-trans-gutter.row{
-    height: 43px;
+    height: $size-nav-height;
     width: 100%;
 }
 

@@ -1,8 +1,7 @@
-<div *ngIf="state.data">
+<div *ngIf="state.data" appOverAndActive>
   <mat-grid-list [cols]="2">
     <mat-grid-tile *ngFor="let channel of state.data.channels">
       <app-channel-posts [channel]="channel"></app-channel-posts>
     </mat-grid-tile>
-
   </mat-grid-list>
 </div>

@@ -1,9 +1,10 @@
 <div *ngIf="channel">
-  <h4>{{channel.name}}</h4>
+  <h2>{{channel.name}}</h2>
   <mat-list role="list">
       <mat-list-item *ngFor="let post of channel.page.datas" role="listitem">
-        {{post.title}}
+        <a [routerLink]="'/posts/' + post.id" class="news-title">{{post.title}}</a>
       </mat-list-item>
+
     </mat-list>
 
     <mat-paginator [length]="channel.page.length" [pageSize]="channel.page.pageSize" [pageSizeOptions]="[10, 20, 50, 100]"

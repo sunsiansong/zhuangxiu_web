@@ -7,7 +7,7 @@ import { UserLike } from '../common/model/like.model';
 @Component({
   selector: 'app-likes-page',
   templateUrl: './likes-page.component.html',
-  styleUrls: ['./likes-page.component.css']
+  styleUrls: ['./likes-page.component.scss']
 })
 export class LikesPageComponent implements OnInit {
 

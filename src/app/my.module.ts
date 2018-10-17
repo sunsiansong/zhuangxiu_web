@@ -34,6 +34,7 @@ import { DATA_SERVICE } from "./const.instance";
 import { TransparentGutterComponent } from "./common/components/transparent-gutter.component";
 import { UiCenterService } from "./common/service/ui-center.service";
 import { OverAndActiveDirective } from "./common/directives/over-and-active.directive";
+import { TechSupportComponent } from './tech-support/tech-support.component';
 
 const basicServiceProviders: Provider[] = [
   { provide: MatPaginatorIntl, useClass: MatPaginatorIntlService }
@@ -74,7 +75,8 @@ const optionalServiceProviders = environment.mockService
     ChannelPostsComponent,
     LeaveWordsComponent,
     TransparentGutterComponent,
-    OverAndActiveDirective
+    OverAndActiveDirective,
+    TechSupportComponent
   ],
   exports: [MaterialModule],
   providers: [

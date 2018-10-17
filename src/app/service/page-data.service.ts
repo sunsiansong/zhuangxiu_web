@@ -25,4 +25,6 @@ export interface PageDataService {
   userLikes(): Observable<UserLike[]>;
 
   submitContactInfo(info: ContactInfo): Observable<any>;
+
+  getCaseDetail(id: number): Observable<Case>;
 }

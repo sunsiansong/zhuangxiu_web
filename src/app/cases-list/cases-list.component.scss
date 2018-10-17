@@ -1,4 +1,4 @@
-@import '../../theme.scss';
+@import "../../theme.scss";
 
 .style-filter {
   mat-radio-group mat-radio-button:last-child {
@@ -11,7 +11,6 @@
   }
 }
 
-
 .card-container {
   display: flex;
 
@@ -23,7 +22,13 @@
     padding-right: 0;
   }
 }
+:host {
+  pointer-events: auto;
+  background-color: white;
+  display: block;
+  box-shadow: $shaddow-main-component;
 
+}
 
 :host ::ng-deep {
   .mat-radio-label-content {

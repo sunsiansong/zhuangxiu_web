@@ -6,6 +6,7 @@ import { filter } from "rxjs/operators";
 /**
  * 代表一个透明（可点击穿透）的空间，当自身触发onmouseover时，自己的pointer-events: none;
  * 通过外部的机会再设置pointer-events为auto
+ * TODO mobile 时最好能自动隐藏
  */
 @Component({
   selector: "app-pc-trans-gutter",
@@ -14,7 +15,7 @@ import { filter } from "rxjs/operators";
     `
       :host {
         display: block;
-        background-color: rgba(255, 255, 255, 0.7);
+        // background-color: rgba(255, 255, 255, 0.7);
       }
     `
   ]
@@ -35,21 +36,19 @@ export class TransparentGutterComponent implements OnInit {
       });
   }
 
-  @HostListener("mouseover", ["$event"])
-  onmouseover(e: MouseEvent) {
+  @HostListener("mousemove", ["$event"])
+  onmousemove(e: MouseEvent) {
     const navBar: HTMLElement = document.getElementById("G_NAV_BAR");
     const { offsetTop, offsetHeight } = navBar;
 
     // 鼠标hover位置在导航条上时穿透点击
-    // TODO 当穿透层和导航条不完全重叠，进入区木、不满足这个条件，需要优化这里的体验、算法，否则就出现偏差。
-    const reduantOffset = 15; // 冗余10px
-    if (offsetTop - reduantOffset <= e.clientY && e.clientY <= offsetTop + offsetHeight + reduantOffset) {
+    if (offsetTop <= e.clientY && e.clientY <= offsetTop + offsetHeight) {
       this.uiCenter.events.next({ type: UiEventType.TRANSPARENT_GUTTER_DIE });
       this.pointerEvents = "none";
       console.log("one gutter died", navBar, e);
     } else {
-      console.log("mouseover gutter but not over navbar",
-      {offsetTop, offsetHeight, ...{topAndHeight: offsetTop + offsetHeight}, ...{clientY: e.clientY}});
+      // console.log("mouseover gutter but not over navbar",
+      // {offsetTop, offsetHeight, ...{topAndHeight: offsetTop + offsetHeight}, ...{clientY: e.clientY}});
     }
   }
 }

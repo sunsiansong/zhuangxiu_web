@@ -1,3 +1,5 @@
+import { environment } from "../../../environments/environment";
+
 export class Fn {
   static getRandomInt(max) {
     return Math.floor(Math.random() * Math.floor(max));
@@ -44,4 +46,12 @@ export class Fn {
     //     return pre + curr;
     //   }, 0);
   }
+
+  static done(): void {
+    console.log('done');
+    if (environment.production) {
+      console.error('should not appear');
+    }
+  }
 }
+
