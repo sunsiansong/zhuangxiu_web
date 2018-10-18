@@ -1,5 +1,18 @@
 import 'zone.js/dist/zone-node';
 import 'reflect-metadata';
+
+// fix start: window is not defined
+// ref: https://github.com/angular/universal/issues/830#issuecomment-345228799
+const domino = require('domino');
+const fs = require('fs');
+const path = require('path');
+const template = fs.readFileSync(path.join(__dirname, '.', 'browser', 'index.html')).toString();
+const win = domino.createWindow(template);
+global['window'] = win;
+global['document'] = win.document;
+// fix end
+
+
 import {enableProdMode} from '@angular/core';
 // Express Engine
 import {ngExpressEngine} from '@nguniversal/express-engine';

@@ -108,6 +108,7 @@ ${this.configs.contactTxt.val}
   }
 
   initAddressAmap(lat: number, lng: number) {
+    // TODO 改为异步加载地图，否则SSR报错。
     const map = new AMap.Map("addressAmap", {
       zoom: 11, // 级别
       center: [lat, lng], // 中心点坐标
