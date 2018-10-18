@@ -33,6 +33,7 @@
   "pre-commit": [],
   "private": true,
   "dependencies": {
+    "@local/frontend-api-spec": "file:../frontend-api-spec",
     "@angular/animations": "^6.1.10",
     "@angular/cdk": "^6.4.7",
     "@angular/common": "^6.1.10",

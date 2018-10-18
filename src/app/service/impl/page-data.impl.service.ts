@@ -1,12 +1,5 @@
-import { PageDataService } from "../page-data.service";
+import { PageDataService, Config, UserLike, ContactInfo, PostsPageData, CasesCompData, HomeState } from "@local/frontend-api-spec";
 import { Observable } from "rxjs";
-import { HomeState } from "../../home/home.component";
-import { CasesCompData } from "../../cases-list/cases-list.component";
-import { PostsPageData } from "../../posts-list/posts-list.component";
-import { Injectable } from "@angular/core";
-import { Config } from "../../common/model/config.model";
-import { UserLike } from "../../common/model/like.model";
-import { ContactInfo } from "../../footer/contact-us/contact-us.component";
 
 export class PageDataImplServie  {
 // export class PageDataImplServie implements PageDataService {

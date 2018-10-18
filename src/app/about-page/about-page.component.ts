@@ -1,7 +1,6 @@
 import { Component, OnInit, Inject, ViewChild, ElementRef } from '@angular/core';
-import { Config } from '../common/model/config.model';
 import { DATA_SERVICE } from '../const.instance';
-import { PageDataService } from '../service/page-data.service';
+import { PageDataService } from '@local/frontend-api-spec';
 
 @Component({
   selector: 'app-about-page',

@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { MOCK_VISITOR_LEAVE_WORDS } from "../../test/example.data";
-import { VisitorLeaveWords } from "../common/model/visitor-leave-words.model";
 import { Fn } from "../common/utils/fn.util";
+import { VisitorLeaveWords } from "@local/frontend-api-spec";
 
 export interface Tile {
   color: { bg: string; fg: string };

@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Case } from '../../common/model/case.model';
 import { Fn } from '../../common/utils/fn.util';
+import { Case } from '@local/frontend-api-spec';
 
 @Component({
   selector: 'app-home-cases',

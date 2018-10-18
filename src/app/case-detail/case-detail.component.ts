@@ -5,9 +5,8 @@ import { Router, Route, RouterLinkActive, ActivatedRoute } from '@angular/router
 import { map } from 'rxjs/operators';
 
 
-import { Case } from '../common/model/case.model';
 import { DATA_SERVICE } from '../const.instance';
-import { PageDataService } from '../service/page-data.service';
+import { PageDataService, Case } from '@local/frontend-api-spec';
 import { Fn } from '../common/utils/fn.util';
 
 @Component({

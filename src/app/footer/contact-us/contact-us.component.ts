@@ -3,20 +3,11 @@ import { Component, Inject, OnInit } from "@angular/core";
 import * as moment from 'moment';
 import { MatSnackBar } from "@angular/material";
 
-import { PageDataService } from "../../service/page-data.service";
-import { Config } from "../../common/model/config.model";
+import { PageDataService, Config, ContactInfo } from '@local/frontend-api-spec';
 import { DATA_SERVICE } from "../../const.instance";
 import { ClipboardService } from "ngx-clipboard";
 
 declare const AMap: any;
-
-export class ContactInfo {
-  intentionType: string;
-  channelType: string;
-  channelVal: string;
-  description: string;
-  contactTime: string;
-}
 
 const INTENTION_TYPES = [
   "商务合作",

@@ -1,5 +1,4 @@
-import { PageDataService } from "../page-data.service";
-import { HomeState } from "../../home/home.component";
+import { PageDataService, Case, Config, UserLike, HomeState, ContactInfo, PostsPageData, CasesCompData } from "@local/frontend-api-spec";
 import { Observable, of, throwError } from "rxjs";
 import {
   MOCK_CASES,
@@ -9,14 +8,7 @@ import {
   MOCK_USER_LIKES,
   MOCK_CASE_DETAIL
 } from "../../../test/example.data";
-import { CasesCompData } from "../../cases-list/cases-list.component";
-import { Injectable } from "@angular/core";
-import { PostsPageData } from "../../posts-list/posts-list.component";
-import { Config } from "../../common/model/config.model";
-import { UserLike } from "../../common/model/like.model";
-import { ContactInfo } from "../../footer/contact-us/contact-us.component";
 import { Fn } from "../../common/utils/fn.util";
-import { Case } from "../../common/model/case.model";
 
 export class MockPageDataService implements PageDataService {
   getCaseDetail(id: number): Observable<Case> {

@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Case } from '../../model/case.model';
+import { Case } from '@local/frontend-api-spec';
 
 @Component({
   selector: 'app-case-card',

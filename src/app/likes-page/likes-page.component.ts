@@ -1,8 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatSnackBar } from '@angular/material';
 import { DATA_SERVICE } from '../const.instance';
-import { PageDataService } from '../service/page-data.service';
-import { UserLike } from '../common/model/like.model';
+import { PageDataService, UserLike } from '@local/frontend-api-spec';
 
 @Component({
   selector: 'app-likes-page',

@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Post } from '../../common/model/post.model';
+import { Post } from '@local/frontend-api-spec';
 
 @Component({
   selector: 'app-home-articles',

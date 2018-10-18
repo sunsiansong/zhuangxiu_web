@@ -1,19 +1,9 @@
 import { Component, OnInit, Inject } from "@angular/core";
-import { Case } from "../common/model/case.model";
-import { Post } from "../common/model/post.model";
-import { Config } from "../common/model/config.model";
-import { PageDataService } from "../service/page-data.service";
+import { PageDataService, Case, Post, Config, HomeState } from "@local/frontend-api-spec";
 import { DATA_SERVICE } from "../const.instance";
 import { UiCenterService, UiEventType } from "../common/service/ui-center.service";
 import { filter } from "rxjs/operators";
 
-export interface HomeState {
-  now: Date;
-  cases: Case[];
-  newsPosts: Post[];
-  articlePosts: Post[];
-  configs: { [key: string]: Config };
-}
 
 @Component({
   selector: "app-home",

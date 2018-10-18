@@ -1,8 +1,4 @@
-import { Case } from "../app/common/model/case.model";
-import { Post } from "../app/common/model/post.model";
-import { VisitorLeaveWords } from "../app/common/model/visitor-leave-words.model";
-import { Config } from "../app/common/model/config.model";
-import { UserLike } from "../app/common/model/like.model";
+import { Case, Post, Config, VisitorLeaveWords, UserLike } from "@local/frontend-api-spec";
 
 export const MOCK_CASES: Case[] = [
   {

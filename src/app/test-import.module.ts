@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { MaterialModule } from './material.module';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
-import { PageDataService } from './service/page-data.service';
+import { PageDataService } from '@local/frontend-api-spec';
 import { MockPageDataService } from './service/__mock__/page-data.service.mock';
 import { RouterLinkDirectiveStub } from './../test/router-link-directive-stub';
 import { DATA_SERVICE } from './const.instance';

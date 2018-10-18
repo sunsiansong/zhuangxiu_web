@@ -10,9 +10,7 @@ import { delay, map, take } from "rxjs/operators";
 
 import { SortDirection, PageEvent } from "@angular/material";
 
-import { PageData } from "../common/model/page.model";
-import { Case } from "../common/model/case.model";
-import { PageDataService } from "../service/page-data.service";
+import { PageDataService, PageData, Case, CasesCompData } from '@local/frontend-api-spec';
 import { DATA_SERVICE } from "../const.instance";
 import { Fn } from "../common/utils/fn.util";
 
@@ -25,12 +23,6 @@ export interface CasesCompState {
   style?: string;
   sort?: string;
   sortDirection?: SortDirection;
-}
-
-export interface CasesCompData {
-  page?: PageData<Case>;
-  // tiles?: Case[][];
-  now?: Date;
 }
 
 /**
